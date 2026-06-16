@@ -1,0 +1,4 @@
+spotify.previous_song  [POST /spotify/music_player/previous_song]
+Go to the previous song in the song queue.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string", "song_id": 1}

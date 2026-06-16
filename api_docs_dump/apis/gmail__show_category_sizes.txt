@@ -1,0 +1,4 @@
+gmail.show_category_sizes  [GET /gmail/category_sizes]
+Show the number of email threads in each category of inbox, outbox, archived, spam, and the number of unscheduled and scheduled email drafts.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"inbox": 1, "outbox": 1, "archived": 1, "spam": 1, "unscheduled_drafts": 1, "scheduled_drafts": 1}

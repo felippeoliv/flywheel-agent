@@ -1,0 +1,8 @@
+gmail.download_attachment  [GET /gmail/attachments/{attachment_id}]
+Download a file attachment.
+  - attachment_id (integer, required): The ID of the attachment to download.
+  - file_system_access_token (string, required): Access token obtained from file_system app login.
+  - access_token (string, required): Access token obtained from gmail app login.
+  - download_to_file_path (string, optional): The file path to download the attachment to in file system app. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'. If not passed, it will be saved in your ~/downloads directory.
+  - overwrite (boolean, optional): Whether to overwrite the file if it already exists.
+  response: {"message": "string", "file_path": "string"}

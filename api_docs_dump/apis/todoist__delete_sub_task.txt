@@ -1,0 +1,5 @@
+todoist.delete_sub_task  [DELETE /todoist/sub_tasks/{sub_task_id}]
+Delete a sub_task.
+  - sub_task_id (integer, required): The ID of the sub_task to delete.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

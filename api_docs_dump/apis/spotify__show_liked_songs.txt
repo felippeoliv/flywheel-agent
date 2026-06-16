@@ -1,0 +1,7 @@
+spotify.show_liked_songs  [GET /spotify/liked_songs]
+Get a list of songs you have liked.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the liked songs by prefixed with +/- to reflect ascending/descending. Valid attributes: liked_at, play_count and title.
+  response: [{"song_id": 1, "title": "string", "album_id": 1, "album_title": "string", "duration": 1, "artists": [{"id": 1, "name": "string"}], "liked_at": "2019-01-01T00:00:00"}]

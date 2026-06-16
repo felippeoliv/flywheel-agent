@@ -1,0 +1,5 @@
+splitwise.show_expense_comment  [GET /splitwise/expense_comments/{comment_id}]
+Get information about a comment posted on an expense.
+  - comment_id (integer, required): The ID of the expense comment.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"expense_comment_id": 1, "expense_id": 1, "comment": "string", "created_at": "2019-01-01T00:00:00", "user": {"name": "string", "email": "user@example.com"}}

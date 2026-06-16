@@ -1,0 +1,5 @@
+todoist.verify_account  [POST /todoist/verify_account]
+Verify your account using the verification code sent to your email address.
+  - email (string, required): Your email address.
+  - verification_code (string, required): The verification code sent to your email address.
+  response: {"message": "string"}

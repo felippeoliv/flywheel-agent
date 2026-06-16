@@ -1,0 +1,9 @@
+splitwise.show_activity  [GET /splitwise/account/activity]
+Show a history of your expenses and payments combined.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - show_expenses (boolean, optional): Whether to show expenses in the history.
+  - show_payments (boolean, optional): Whether to show payments in the history.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the expenses/payments by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at.
+  response: [{"record_type": "expense", "amount": 0.0, "paid_by": {"name": "string", "email": "user@example.com"}, "owed_by": [{"name": "string", "email": "user@example.com", "amount": 0.0}], "description": "string", "group_id": 1, "group_name": "string", "created_at": "2019-01-01T00:00:00"}]

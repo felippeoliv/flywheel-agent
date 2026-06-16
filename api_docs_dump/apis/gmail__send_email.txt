@@ -1,0 +1,9 @@
+gmail.send_email  [POST /gmail/emails]
+Send a new email to one or more recipients.
+  - email_addresses (list[string], required): List of recipient email addresses.
+  - subject (string, required): The subject of the email.
+  - body (string, required): The body of the email.
+  - access_token (string, required): Access token obtained from gmail app login.
+  - attachment_file_paths (list[string], optional): List of absolute file paths (starting with /) from the file_system app to attach to the email.
+  - file_system_access_token (string, optional): Access token obtained from file_system app login. Only needed for attachments.
+  response: {"message": "string", "sent_email_thread_id": 1, "sent_email_id": 1}

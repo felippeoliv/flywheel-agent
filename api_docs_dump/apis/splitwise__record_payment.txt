@@ -1,0 +1,11 @@
+splitwise.record_payment  [POST /splitwise/payments]
+Record a new payment for an expense. This only records payment on splitwise and does not move real money.
+  - payer_email (string, required): Email of the user who made the payment.
+  - receiver_email (string, required): Email of the user who received the payment.
+  - amount (number, required): The amount of the payment.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - group_id (integer, optional): The ID of the group to record the payment in.
+  - description (string, optional): A short note or description of the payment.
+  - receipt_file_path (string, optional): Receipt file path to attach as an evidence of this payment made (e.g., snapshot of bank transfer, venmo, etc.)
+  - file_system_access_token (string, optional): Access token obtained from file_system app login. Only needed for attaching receipt file.
+  response: {"message": "string", "payment_id": 1}

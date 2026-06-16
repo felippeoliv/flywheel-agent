@@ -1,0 +1,6 @@
+splitwise.add_member_to_group  [POST /splitwise/groups/{group_id}/members]
+Add a member to a group.
+  - group_id (integer, required): The ID of the group.
+  - user_email (string, required): Email of the user to add to the group.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

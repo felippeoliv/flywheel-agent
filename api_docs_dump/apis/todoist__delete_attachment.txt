@@ -1,0 +1,6 @@
+todoist.delete_attachment  [DELETE /todoist/task_comments/{task_comment_id}/attachments/{attachment_file_name}]
+Delete an attachment of a task comment.
+  - task_comment_id (integer, required): The ID of the task comment to delete the attachment from.
+  - attachment_file_name (string, required): Name of the file attached to the task comment.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

@@ -1,0 +1,4 @@
+spotify.delete_account  [DELETE /spotify/account]
+Delete your account.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

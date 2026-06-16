@@ -1,0 +1,5 @@
+spotify.follow_artist  [POST /spotify/following_artists/{artist_id}]
+Follow an artist.
+  - artist_id (integer, required): The artist id to follow.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

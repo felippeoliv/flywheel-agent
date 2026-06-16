@@ -1,0 +1,9 @@
+venmo.create_transaction  [POST /venmo/transactions]
+Send money to a user.
+  - receiver_email (string, required): Email address of the receiver.
+  - amount (number, required): Amount of the transaction.
+  - access_token (string, required): Access token obtained from venmo app login.
+  - description (string, optional): Description of or note about the transaction.
+  - payment_card_id (integer, optional): ID of the payment card to use for the transaction. If not passed, Venmo balance will be used.
+  - private (boolean, optional): Whether the transaction is private or not.
+  response: {"message": "string", "transaction_id": 1}

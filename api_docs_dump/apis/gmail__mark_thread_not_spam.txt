@@ -1,0 +1,5 @@
+gmail.mark_thread_not_spam  [POST /gmail/email_threads/{email_thread_id}/not_spam]
+Mark an email thread as not spam.
+  - email_thread_id (integer, required): The ID of the email thread to mark as not spam.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

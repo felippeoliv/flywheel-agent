@@ -1,0 +1,4 @@
+simple_note.delete_account  [DELETE /simple_note/account]
+Delete your account.
+  - access_token (string, required): Access token obtained from simple_note app login.
+  response: {"message": "string"}

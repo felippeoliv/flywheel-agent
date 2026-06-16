@@ -1,0 +1,8 @@
+splitwise.attach_expense_receipt_file  [POST /splitwise/expenses/{expense_id}/file]
+Attach a receipt file to an expense.
+  - expense_id (integer, required): The ID of the expense to attach receipt file to.
+  - receipt_file_path (string, required): Absolute file path (starting with /) from the file_system app to attach as a receipt for this expense.
+  - file_system_access_token (string, required): Access token obtained from file_system app login.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - overwrite (boolean, optional): Whether to overwrite the existing receipt file if it already exists.
+  response: {"message": "string"}

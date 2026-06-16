@@ -1,0 +1,5 @@
+splitwise.delete_payment_receipt_file  [DELETE /splitwise/payments/{payment_id}/file]
+Delete the receipt file from a payment.
+  - payment_id (integer, required): The ID of the payment to delete receipt for.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

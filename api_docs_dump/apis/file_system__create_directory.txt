@@ -1,0 +1,6 @@
+file_system.create_directory  [POST /file_system/directory]
+Create a directory if it does not exist, optionally recursively.
+  - directory_path (string, required): Path of the directory. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - access_token (string, required): Access token obtained from file_system app login.
+  - recursive (boolean, optional): If True, it will create all parent directories recursively if they don't exist.
+  response: {"message": "string"}

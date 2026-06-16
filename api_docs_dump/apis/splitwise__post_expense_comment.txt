@@ -1,0 +1,6 @@
+splitwise.post_expense_comment  [POST /splitwise/expenses/{expense_id}/comments]
+Post a a comment on an expense.
+  - expense_id (integer, required): The ID of the expense.
+  - comment (string, required): The comment for the expense.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string", "expense_comment_id": 1}

@@ -1,0 +1,8 @@
+gmail.forward_email_from_thread  [POST /gmail/email_threads/{email_thread_id}/emails/{email_id}/forward]
+Forward an email from an email thread to one or more recipients.
+  - email_thread_id (integer, required): The ID of the email thread to forward.
+  - email_id (integer, required): The ID of the email to forward.
+  - email_addresses (list[string], required): List of recipient email addresses.
+  - access_token (string, required): Access token obtained from gmail app login.
+  - draft_not_send (boolean, optional): If true, the email will be saved as a draft instead of being sent. This way it can be edited before sending.
+  response: {"message": "string", "sent_email_thread_id": 1, "sent_email_id": 1, "draft_id": 1}

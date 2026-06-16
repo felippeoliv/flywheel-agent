@@ -1,0 +1,8 @@
+spotify.review_song  [POST /spotify/songs/{song_id}/reviews]
+Rate or review a song.
+  - song_id (integer, required): ID of the song to review.
+  - rating (integer, required): Song rating for this review.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - title (string, optional): Title of the review.
+  - text (string, optional): Text content of the review.
+  response: {"message": "string", "song_review_id": 1}

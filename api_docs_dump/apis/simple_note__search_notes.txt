@@ -1,0 +1,11 @@
+simple_note.search_notes  [GET /simple_note/notes]
+Search your notes. This will not show contents of the notes. Pinned notes will be shown first by default, except when dont_reorder_pinned is true.
+  - access_token (string, required): Access token obtained from simple_note app login.
+  - query (string, optional): Search query for the notes.
+  - tags (list[string], optional): Tags to filter the notes by. Notes not having any of these tags will be filtered out.
+  - pinned (boolean, optional): Filter notes by pinned status.
+  - dont_reorder_pinned (boolean, optional): If true, pinned notes will not be reordered to be shown at the top.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the notes by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at and updated_at. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page. If both query and sort_by are not given, null, or empty, sort_by will default to -updated_at.
+  response: [{"note_id": 1, "title": "string", "tags": ["string"], "created_at": "2019-01-01T00:00:00", "updated_at": "2019-01-01T00:00:00", "pinned": true}]

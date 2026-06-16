@@ -1,0 +1,5 @@
+file_system.delete_file  [DELETE /file_system/file]
+Delete a file.
+  - file_path (string, required): Path of the file. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - access_token (string, required): Access token obtained from file_system app login.
+  response: {"message": "string", "file_path": "string"}

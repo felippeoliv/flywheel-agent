@@ -1,0 +1,6 @@
+phone.send_voice_message  [POST /phone/messages/voice/{phone_number}]
+Send a voice message on the given phone number.
+  - phone_number (string, required): The phone number of the contact to send the voice message to.
+  - message (string, required): The message text of the voice_message.
+  - access_token (string, required): Access token obtained from phone app login.
+  response: {"message": "string", "voice_message_id": 1}

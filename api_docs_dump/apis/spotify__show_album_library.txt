@@ -1,0 +1,6 @@
+spotify.show_album_library  [GET /spotify/library/albums]
+Get a list of albums in the user's album library.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"album_id": 1, "title": "string", "genre": "string", "artists": [{"id": 1, "name": "string"}], "rating": 0.0, "like_count": 1, "review_count": 1, "release_date": "2019-01-01T00:00:00", "song_ids": [1], "added_at": "2019-01-01T00:00:00"}]

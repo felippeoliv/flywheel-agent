@@ -1,0 +1,4 @@
+amazon.show_seller  [GET /amazon/sellers/{seller_id}]
+Show a detailed information about the seller.
+  - seller_id (integer, required): The ID of the seller.
+  response: {"seller_id": 1, "name": "string", "rating": 0.0}

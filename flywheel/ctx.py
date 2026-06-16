@@ -28,6 +28,21 @@ from flywheel.mcp import MCP
 from flywheel.proxy import chat
 from flywheel.trace import Trace
 
+try:  # observability shim: real Langfuse locally, no-op (and import-safe) in the graded sandbox
+    import obs
+except Exception:  # pragma: no cover
+    class _ObsNull:
+        def _n(self, *a, **k):
+            class _C:
+                def __enter__(self_): return self_
+                def __exit__(self_, *a): return False
+                def update(self_, **k): pass
+            return _C()
+        task = generation = span = _n
+        def flush(self): pass
+        def enabled(self): return False
+    obs = _ObsNull()
+
 
 class Ctx:
     def __init__(self, instruction, proxy_url, key, memory_dir, trace_file=None,
@@ -77,8 +92,19 @@ class Ctx:
         Pass `tools` for function-calling, `response_format` for structured output. The proxy
         pins the model and temperature; never send `model` or `max_tokens`."""
         self.trace("model")
-        data, remaining = chat(self._proxy, self._key, messages, tools=tools,
-                               response_format=response_format)
+        with obs.generation("model", model="gemini-3-flash-preview", input=messages) as g:
+            data, remaining = chat(self._proxy, self._key, messages, tools=tools,
+                                   response_format=response_format)
+            try:
+                usage = (data or {}).get("usage") or {}
+                msg = ((data or {}).get("choices") or [{}])[0].get("message", {})
+                g.update(output=msg.get("content") or msg,
+                         usage_details={"input": usage.get("prompt_tokens"),
+                                        "output": usage.get("completion_tokens"),
+                                        "total": usage.get("total_tokens")},
+                         metadata={"tokens_remaining": remaining})
+            except Exception:
+                pass
         if remaining is not None:
             self.trace("budget", remaining=remaining)
         return data
@@ -89,9 +115,14 @@ class Ctx:
         cannot fit 457 API docs in context, so this is load-bearing -- index the docs
         (tools/dump_api_docs.py) and pass your retriever via Ctx(retriever=...)."""
         self.trace("retrieval", query=query)
-        if self._retriever is not None:
-            return self._retriever(query)
-        return self.mcp.call("search_apis", {"query": query})
+        with obs.span("retrieve", input=query) as s:
+            out = self._retriever(query) if self._retriever is not None \
+                else self.mcp.call("search_apis", {"query": query})
+            try:
+                s.update(output=str(out)[:2000])
+            except Exception:
+                pass
+            return out
 
     def reflect(self, note):
         """Record a self-correction (a failed step you're about to retry differently)."""
@@ -105,12 +136,17 @@ class Ctx:
         so the agent you tune locally is the agent we grade. State (logins, records) persists across
         calls within a task; keep Python variables yourself by re-deriving or stashing in memory."""
         self.trace("execute")
-        if self._env is not None:  # local AppWorld
-            return self._env.execute(code)
-        res = self.mcp.call("run_code", {"code": code})  # graded gateway
-        if isinstance(res, dict):
-            return res.get("stdout") or res.get("error") or ""
-        return res
+        with obs.span("run_code", input=code) as s:
+            if self._env is not None:  # local AppWorld
+                out = self._env.execute(code)
+            else:
+                res = self.mcp.call("run_code", {"code": code})  # graded gateway
+                out = (res.get("stdout") or res.get("error") or "") if isinstance(res, dict) else res
+            try:
+                s.update(output=str(out)[:5000])
+            except Exception:
+                pass
+            return out
 
     def execute(self, code):
         """Run Python against AppWorld (`apis.<app>.<method>(...)`). Alias of ctx.run_code; works on

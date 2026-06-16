@@ -1,0 +1,6 @@
+amazon.search_product_types  [GET /amazon/product_types]
+Search product types present in the database.
+  - query (string, optional): The search query string.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: ["string"]

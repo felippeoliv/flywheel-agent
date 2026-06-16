@@ -1,0 +1,12 @@
+splitwise.record_expense  [POST /splitwise/expenses]
+Record a new expense to share with others.
+  - description (string, required): A short note or description of the expense.
+  - paid_amount (number, required): The total amount of the expense paid.
+  - payer_email (string, required): Email of the user who paid for the expense.
+  - debtor_emails (list[string], required): Emails of the users who owe a share of the expense.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - debt_amounts (list[number], optional): The amounts owed by each debtor. If not passed, it is assumed that each debtor owes an equal share. If passed, the list must be of the same length as debtor_ids.
+  - group_id (integer, optional): The ID of the group this expense should belong to. Keep it none if it should not belong to any group.
+  - receipt_file_path (string, optional): Absolute file path (starting with /) from the file_system app to attach as a receipt for this expense.
+  - file_system_access_token (string, optional): Access token obtained from file_system app login. Only needed for attaching receipt file.
+  response: {"message": "string", "expense_id": 1}

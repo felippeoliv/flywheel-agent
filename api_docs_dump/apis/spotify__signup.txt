@@ -1,0 +1,7 @@
+spotify.signup  [POST /spotify/account]
+Sign up to create account.
+  - first_name (string, required): Your first name
+  - last_name (string, required): Your last name
+  - email (string, required): Your email address.
+  - password (string, required): Your password.
+  response: {"message": "string"}

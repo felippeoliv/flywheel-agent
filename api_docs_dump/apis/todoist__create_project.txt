@@ -1,0 +1,8 @@
+todoist.create_project  [POST /todoist/projects]
+Create a new project.
+  - name (string, required): The name of the project.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - color (string, optional): Color of the project.
+  - description (string, optional): The description of the project.
+  - is_favorite (boolean, optional): Whether the project is marked as favorite.
+  response: {"message": "string", "project_id": 1}

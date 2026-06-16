@@ -1,0 +1,7 @@
+file_system.create_file  [POST /file_system/file]
+Create a new file with the given content.
+  - file_path (string, required): Path of the file. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - access_token (string, required): Access token obtained from file_system app login.
+  - content (string, optional): The content of the file.
+  - overwrite (boolean, optional): Whether to overwrite the file if it already exists.
+  response: {"message": "string", "file_path": "string"}

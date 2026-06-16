@@ -1,0 +1,5 @@
+splitwise.undelete_payment  [PATCH /splitwise/payments/{payment_id}/undelete]
+Restore a previously deleted payment you are involved in.
+  - payment_id (integer, required): The ID of the payment to delete.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

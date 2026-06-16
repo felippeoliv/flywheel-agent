@@ -1,0 +1,6 @@
+gmail.label_thread  [POST /gmail/email_threads/{email_thread_id}/label]
+Label an email thread.
+  - email_thread_id (integer, required): The ID of the email thread to label.
+  - label (string, required): The label to assign to the email thread.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

@@ -1,0 +1,7 @@
+splitwise.create_group  [POST /splitwise/groups]
+Create a new group of friends or family to share expenses with.
+  - name (string, required): The name of the group.
+  - member_emails (list[string], required): Emails of the users to add to the group besides yourself.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - description (string, optional): The description of the group.
+  response: {"message": "string", "group_id": 1}

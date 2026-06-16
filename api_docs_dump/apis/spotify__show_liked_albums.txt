@@ -1,0 +1,7 @@
+spotify.show_liked_albums  [GET /spotify/liked_albums]
+Get a list of albums you have liked.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the liked albums by prefixed with +/- to reflect ascending/descending. Valid attributes: liked_at and title.
+  response: [{"album_id": 1, "title": "string", "genre": "string", "artists": [{"id": 1, "name": "string"}], "rating": 0.0, "like_count": 1, "review_count": 1, "release_date": "2019-01-01T00:00:00", "song_ids": [1], "liked_at": "2019-01-01T00:00:00"}]

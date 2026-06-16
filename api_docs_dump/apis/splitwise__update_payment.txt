@@ -1,0 +1,7 @@
+splitwise.update_payment  [PATCH /splitwise/payments/{payment_id}]
+Update payment information.
+  - payment_id (integer, required): The ID of the payment.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - amount (number, optional): The updated amount of the payment.
+  - description (string, optional): The updated note or description of the payment.
+  response: {"message": "string"}

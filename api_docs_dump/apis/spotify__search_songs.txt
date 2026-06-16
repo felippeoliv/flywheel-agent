@@ -1,0 +1,20 @@
+spotify.search_songs  [GET /spotify/songs]
+Search for songs with a query.
+  - query (string, optional): The search query string.
+  - artist_id (integer, optional): The artist id to filter the search results by.
+  - album_id (integer, optional): The album id to filter the search results by.
+  - genre (string, optional): The genre to filter the albums by.
+  - min_release_date (string, optional): The minimum release date for search results in YYYY-MM-DD format.
+  - max_release_date (string, optional): The maximum release date for search results in YYYY-MM-DD format.
+  - min_duration (integer, optional): The minimum duration in seconds for search results.
+  - max_duration (integer, optional): The maximum duration in seconds for search results.
+  - min_rating (number, optional): The minimum rating for search results.
+  - max_rating (number, optional): The maximum rating for search results.
+  - min_like_count (integer, optional): The minimum like count for search results.
+  - max_like_count (integer, optional): The maximum like count for search results.
+  - min_play_count (integer, optional): The minimum play count for search results.
+  - max_play_count (integer, optional): The maximum play count for search results.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the songs by prefixed with +/- to reflect ascending/descending. Valid attributes: rating, like_count and play_count. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page.
+  response: [{"song_id": 1, "title": "string", "album_id": 1, "album_title": "string", "duration": 1, "artists": [{"id": 1, "name": "string"}], "release_date": "2019-01-01T00:00:00", "genre": "string", "play_count": 0.0, "rating": 0.0, "like_count": 1, "review_count": 1, "shareable_link": "string"}]

@@ -1,0 +1,4 @@
+venmo.logout  [POST /venmo/auth/logout]
+Logout from your account.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

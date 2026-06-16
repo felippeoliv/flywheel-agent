@@ -1,0 +1,6 @@
+spotify.remove_song_from_playlist  [DELETE /spotify/playlists/{playlist_id}/songs/{song_id}]
+Remove a song from a playlist.
+  - playlist_id (integer, required): The playlist id to remove the song from.
+  - song_id (integer, required): The song id to remove.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

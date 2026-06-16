@@ -1,0 +1,7 @@
+simple_note.add_content_to_note  [PATCH /simple_note/notes/{note_id}/{append_or_prepend}]
+Append or prepend content to a note.
+  - note_id (integer, required): ID of the note to add content to.
+  - append_or_prepend (string, required): Whether to append or prepend the content.
+  - added_content (string, required): Content to append or prepend on the note's existing content. It will add a new line between the existing content and the added content.
+  - access_token (string, required): Access token obtained from simple_note app login.
+  response: {"message": "string"}

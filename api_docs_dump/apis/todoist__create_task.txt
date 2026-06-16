@@ -1,0 +1,13 @@
+todoist.create_task  [POST /todoist/projects/{project_id}/tasks]
+Create a new task within a project.
+  - project_id (integer, required): The ID of the project. If set to 0, the task will be created in your default/inbox project.
+  - title (string, required): The title of the task.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - section_id (integer, optional): The ID of the section within the project.
+  - description (string, optional): The description of the task.
+  - due_date (string, optional): The due date of the task in YYYY-MM-DD format.
+  - duration (number, optional): The duration of the task.
+  - duration_unit (string, optional): The unit of the task duration.
+  - order_index (integer, optional): Index at which this task should be inserted in the current list of tasks. 0 to insert at the top of the list, 1 to insert below the first task, etc. You can also use a negative value to insert from the end: -1 to insert at the end, -2 to insert just above the last task, etc.
+  - priority (string, optional): The priority of the task.
+  response: {"message": "string", "task_id": 1}

@@ -1,0 +1,4 @@
+api_docs.show_api_descriptions  [GET /api_docs/api_descriptions]
+Show descriptions for all APIs available for a given app.
+  - app_name (string, required): App name to return API descriptions for.
+  response: [{"name": "string", "description": "string"}]

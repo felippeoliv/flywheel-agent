@@ -1,0 +1,4 @@
+simple_note.send_verification_code  [POST /simple_note/send_verification_code]
+Send account verification code to your email address.
+  - email (string, required): Your email address.
+  response: {"message": "string"}

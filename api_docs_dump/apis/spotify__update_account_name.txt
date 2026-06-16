@@ -1,0 +1,6 @@
+spotify.update_account_name  [PATCH /spotify/account]
+Update your first or last name in the account profile.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - first_name (string, optional): Your updated first name.
+  - last_name (string, optional): Your updated last name.
+  response: {"message": "string"}

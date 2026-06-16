@@ -1,0 +1,10 @@
+phone.search_text_messages  [GET /phone/messages/text]
+Show or search your text messages.
+  - access_token (string, required): Access token obtained from phone app login.
+  - query (string, optional): The search query string.
+  - phone_number (string, optional): The phone number of the contact to show messages with.
+  - only_latest_per_contact (boolean, optional): If set to true, only the latest message from each contact will be shown.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the messages by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page. If both query and sort_by are not given, null, or empty, sort_by will default to -created_at.
+  response: [{"text_message_id": 1, "sender": {"contact_id": 1, "name": "string", "phone_number": "string"}, "receiver": {"contact_id": 1, "name": "string", "phone_number": "string"}, "message": "string", "sent_at": "2019-01-01T00:00:00"}]

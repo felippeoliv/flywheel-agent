@@ -1,0 +1,7 @@
+todoist.update_section  [PATCH /todoist/sections/{section_id}]
+Update section information.
+  - section_id (integer, required): The ID of the section.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - name (string, optional): The updated name of the section.
+  - order_index (integer, optional): The updated order index of this section in the list of project sections.
+  response: {"message": "string"}

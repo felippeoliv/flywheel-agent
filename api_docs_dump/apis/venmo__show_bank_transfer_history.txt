@@ -1,0 +1,7 @@
+venmo.show_bank_transfer_history  [GET /venmo/bank_transfers]
+Show histroy of money transfer from Venmo to payment card and vice versa.
+  - access_token (string, required): Access token obtained from venmo app login.
+  - transfer_type (string, optional): Filter bank transfers by type. Will skip filtering if not passed.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"bank_transfer_id": 1, "transfer_type": "card_to_venmo", "amount": 0.0, "payment_card_digits": "string", "created_at": "2019-01-01T00:00:00"}]

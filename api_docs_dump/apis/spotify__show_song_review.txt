@@ -1,0 +1,4 @@
+spotify.show_song_review  [GET /spotify/song_reviews/{review_id}]
+Show a song review.
+  - review_id (integer, required): The song review id to retrieve.
+  response: {"song_review_id": 1, "song_id": 1, "rating": 1.0, "title": "string", "text": "string", "created_at": "2019-01-01T00:00:00", "user": {"name": "string", "email": "user@example.com"}}

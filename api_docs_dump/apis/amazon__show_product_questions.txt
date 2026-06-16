@@ -1,0 +1,9 @@
+amazon.show_product_questions  [GET /amazon/products/{product_id}/questions]
+Get a list of product questions.
+  - product_id (integer, required): ID of the product to show questions for.
+  - query (string, optional): The search query string.
+  - user_email (string, optional): Email of the user who posted the question
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the questions by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page.
+  response: [{"product_id": 1, "question_id": 1, "question": "string", "created_at": "2019-01-01T00:00:00", "user": {"name": "string", "email": "user@example.com"}}]

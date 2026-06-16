@@ -1,0 +1,8 @@
+amazon.write_product_review  [POST /amazon/products/{product_id}/reviews]
+Write a product review.
+  - product_id (integer, required): ID of the product to review.
+  - rating (integer, required): Product rating for this review.
+  - access_token (string, required): Access token obtained from amazon app login.
+  - title (string, optional): Title of the review.
+  - text (string, optional): Text content of the review.
+  response: {"message": "string", "product_review_id": 1}

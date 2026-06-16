@@ -1,0 +1,6 @@
+phone.send_text_message  [POST /phone/messages/text/{phone_number}]
+Send a text message on the given phone number.
+  - phone_number (string, required): The phone number of the contact to send the message to.
+  - message (string, required): The content of the text message.
+  - access_token (string, required): Access token obtained from phone app login.
+  response: {"message": "string", "text_message_id": 1}

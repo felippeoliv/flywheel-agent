@@ -1,0 +1,8 @@
+spotify.play_music  [POST /spotify/music_player/play]
+Play music based on various criteria. You can pass, at most, any one of queue_position, song_id, album_id or playlist_id. If one of song_id, album_id or playlist_id is passed, that song, album or playlist will be added to the queue and played. Otherwise, the queue will remain unchanged. If queue_position is passed, the song at that position in the queue will be played. If none is passed, the current song in the queue will be played.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - song_id (integer, optional): ID of the song to play.
+  - album_id (integer, optional): ID of the album to play.
+  - playlist_id (integer, optional): ID of the playlist to play.
+  - queue_position (integer, optional): Position of the song in the queue to play.
+  response: {"message": "string", "song_id": 1}

@@ -1,0 +1,6 @@
+spotify.move_song_in_queue  [POST /spotify/music_player/move_song]
+Move a song in the queue to a new position.
+  - current_position (integer, required): The current position of the song in the queue.
+  - new_position (integer, required): The new position of the song in the queue.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

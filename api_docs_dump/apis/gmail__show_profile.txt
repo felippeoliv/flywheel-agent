@@ -1,0 +1,4 @@
+gmail.show_profile  [GET /gmail/profile]
+Show public profile information of a user.
+  - email (string, optional): Email of the person you want to see the profile information of.
+  response: {"first_name": "string", "last_name": "string", "email": "user@example.com", "registered_at": "2019-01-01T00:00:00"}

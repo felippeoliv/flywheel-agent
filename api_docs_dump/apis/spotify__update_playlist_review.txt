@@ -1,0 +1,8 @@
+spotify.update_playlist_review  [PATCH /spotify/playlist_reviews/{review_id}]
+Update a playlist review.
+  - review_id (integer, required): ID of the playlist review.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - rating (integer, optional): Playlist rating for this review.
+  - title (string, optional): Title of the review.
+  - text (string, optional): Text content of the review.
+  response: {"message": "string"}

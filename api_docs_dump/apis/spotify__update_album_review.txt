@@ -1,0 +1,8 @@
+spotify.update_album_review  [PATCH /spotify/album_reviews/{review_id}]
+Update an album review.
+  - review_id (integer, required): ID of the album review.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - rating (integer, optional): Album rating for this review.
+  - title (string, optional): Title of the review.
+  - text (string, optional): Text content of the review.
+  response: {"message": "string"}

@@ -1,0 +1,5 @@
+spotify.unfollow_artist  [DELETE /spotify/following_artists/{artist_id}]
+Unfollow an artist.
+  - artist_id (integer, required): The artist id to unfollow.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

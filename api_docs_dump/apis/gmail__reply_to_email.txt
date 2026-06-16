@@ -1,0 +1,10 @@
+gmail.reply_to_email  [POST /gmail/email_threads/{email_thread_id}/emails/{email_id}/reply]
+Reply to an existing email in a thread.
+  - email_thread_id (integer, required): The ID of the email thread to reply to.
+  - email_id (integer, required): The ID of the email to reply to.
+  - body (string, required): The body of the reply email.
+  - access_token (string, required): Access token obtained from gmail app login.
+  - email_addresses (list[string], optional): List of recipient email addresses. If passed, it'll reply to all recipients in the list, otherwise, to the sender.
+  - attachment_file_paths (list[string], optional): List of absolute file paths (starting with /) from the file_system app to attach to the email.
+  - file_system_access_token (string, optional): Access token obtained from file_system app login. Only needed for attachments.
+  response: {"message": "string", "sent_email_id": 1}

@@ -1,0 +1,5 @@
+gmail.mark_thread_read  [POST /gmail/email_threads/{email_thread_id}/read]
+Mark an email thread as read.
+  - email_thread_id (integer, required): The ID of the email thread to mark as read.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

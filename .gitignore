@@ -6,3 +6,4 @@ __pycache__/
 .memory/
 experiments/
 .runs/
+.venv/

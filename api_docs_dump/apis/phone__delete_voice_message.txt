@@ -1,0 +1,5 @@
+phone.delete_voice_message  [DELETE /phone/messages/voice/{voice_message_id}]
+Delete a voice message.
+  - voice_message_id (integer, required): The ID of the voice message to delete.
+  - access_token (string, required): Access token obtained from phone app login.
+  response: {"message": "string"}

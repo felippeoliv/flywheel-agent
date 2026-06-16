@@ -1,0 +1,5 @@
+venmo.mark_notifications  [PATCH /venmo/notifications]
+Mark all notifications as read or unread.
+  - read (boolean, required): Read status of the notification.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

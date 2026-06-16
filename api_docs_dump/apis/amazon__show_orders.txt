@@ -1,0 +1,8 @@
+amazon.show_orders  [GET /amazon/orders]
+Show or search your past orders
+  - access_token (string, required): Access token obtained from amazon app login.
+  - query (string, optional): Search query string.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the orders by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page. If both query and sort_by are not given, null, or empty, sort_by will default to -created_at.
+  response: [{"order_id": 1, "address_id": 1, "payment_card_id": 1, "name": "string", "tax": 0.0, "delivery_fee": 0.0, "gift_wrap_fee": 0.0, "discount": 0.0, "created_at": "2019-01-01T00:00:00", "address_text": "string", "payment_card_digits": "string", "paid_amount": 0.0, "order_items": [{"product_id": 1, "ordered_quantity": 1, "returned_quantity": 1, "gift_wrap_quantity": 1, "price": 0.0, "expected_delivery_at": "2019-01-01T00:00:00", "delivered_at": "2019-01-01T00:00:00"}]}]

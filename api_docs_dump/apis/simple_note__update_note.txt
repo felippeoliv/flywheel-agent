@@ -1,0 +1,9 @@
+simple_note.update_note  [PATCH /simple_note/notes/{note_id}]
+Update a note's title, content, tags, and/or pinned status.
+  - note_id (integer, required): ID of the note to update.
+  - access_token (string, required): Access token obtained from simple_note app login.
+  - title (string, optional): Updated title of the note.
+  - content (string, optional): Updated content of the note.
+  - tags (list[string], optional): Updated tags for the note.
+  - pinned (boolean, optional): Updated pinned status of the note.
+  response: {"message": "string"}

@@ -1,0 +1,8 @@
+amazon.show_returns  [GET /amazon/returns]
+Get a list of your product returns.
+  - access_token (string, required): Access token obtained from amazon app login.
+  - order_id (integer, optional): ID of the order to filter returns by.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the product returns by prefixed with +/- to reflect ascending/descending. Valid attributes: quantity, initiated_at and returned_at.
+  response: [{"return_id": 1, "order_id": 1, "product_id": 1, "product_name": "string", "quantity": 1.0, "deliverer_id": 1, "deliverer_name": "UPS", "refund_amount": 0.0, "initiated_at": "2019-01-01T00:00:00", "returned_at": "2019-01-01T00:00:00", "confirmation_code": "string"}]

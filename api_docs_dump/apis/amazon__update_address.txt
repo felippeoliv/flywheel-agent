@@ -1,0 +1,11 @@
+amazon.update_address  [PATCH /amazon/addresses/{address_id}]
+Update address information.
+  - address_id (integer, required): ID of the address to update
+  - access_token (string, required): Access token obtained from amazon app login.
+  - name (string, optional): New name for the address
+  - street_address (string, optional): New street address line.
+  - city (string, optional): New city name for the address
+  - state (string, optional): New state name for the address
+  - country (string, optional): New country name for the address
+  - zip_code (integer, optional): New ZIP code for the address
+  response: {"message": "string"}

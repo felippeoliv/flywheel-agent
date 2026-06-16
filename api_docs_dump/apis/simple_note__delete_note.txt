@@ -1,0 +1,5 @@
+simple_note.delete_note  [DELETE /simple_note/notes/{note_id}]
+Delete a note.
+  - note_id (integer, required): ID of the note to be deleted.
+  - access_token (string, required): Access token obtained from simple_note app login.
+  response: {"message": "string"}

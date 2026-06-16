@@ -1,0 +1,10 @@
+phone.create_alarm  [POST /phone/alarms]
+Create a new alarm.
+  - time (string, required): The time of the alarm in HH:MM format.
+  - access_token (string, required): Access token obtained from phone app login.
+  - repeat_days (list[string], optional): Days on which the alarm repeats.
+  - label (string, optional): The label for the alarm.
+  - enabled (boolean, optional): Whether the alarm is enabled or not.
+  - snooze_minutes (integer, optional): The duration of snooze in minutes. Use 0 for no snooze.
+  - vibration (boolean, optional): Whether the alarm should vibrate or not.
+  response: {"message": "string", "alarm_id": 1}

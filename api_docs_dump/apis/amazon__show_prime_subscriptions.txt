@@ -1,0 +1,6 @@
+amazon.show_prime_subscriptions  [GET /amazon/prime/subscriptions]
+Show your prime subscription history.
+  - access_token (string, required): Access token obtained from amazon app login.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"prime_subscription_id": 1, "start_date": "2019-01-01T00:00:00", "end_date": "2019-01-01T00:00:00", "payment_card_digits": "string", "paid_amount": 0.0}]

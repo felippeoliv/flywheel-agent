@@ -1,0 +1,5 @@
+gmail.mark_thread_unstarred  [POST /gmail/email_threads/{email_thread_id}/unstarred]
+Mark an email thread as unstarred.
+  - email_thread_id (integer, required): The ID of the email thread to unstar.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

@@ -1,0 +1,5 @@
+todoist.delete_project_invite  [POST /todoist/project_invites/{invite_code}/delete]
+Delete a project invite that you sent or received.
+  - invite_code (string, required): The invite code sent to you by a project collaborator.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

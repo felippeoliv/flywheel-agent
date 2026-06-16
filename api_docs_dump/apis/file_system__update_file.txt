@@ -1,0 +1,6 @@
+file_system.update_file  [PATCH /file_system/file]
+Update a file's content.
+  - file_path (string, required): Path of the file. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - content (string, required): The updated content of the file.
+  - access_token (string, required): Access token obtained from file_system app login.
+  response: {"message": "string", "file_path": "string"}

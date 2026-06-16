@@ -1,0 +1,4 @@
+amazon.remove_promo_code_from_cart  [DELETE /amazon/cart_promos]
+Remove a promo code from your cart.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string"}

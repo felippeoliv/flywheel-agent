@@ -1,0 +1,8 @@
+spotify.review_album  [POST /spotify/albums/{album_id}/reviews]
+Rate or review an album.
+  - album_id (integer, required): ID of the album to review.
+  - rating (integer, required): Album rating for this review.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - title (string, optional): Title of the review.
+  - text (string, optional): Text content of the review.
+  response: {"message": "string", "album_review_id": 1}

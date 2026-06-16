@@ -1,0 +1,8 @@
+venmo.update_payment_request  [PATCH /venmo/payment_requests/{payment_request_id}]
+Update payment request information.
+  - payment_request_id (integer, required): ID of the payment request to update.
+  - access_token (string, required): Access token obtained from venmo app login.
+  - amount (number, optional): Updated amount of the payment request.
+  - description (string, optional): Updated description of or note about the payment request.
+  - private (boolean, optional): Updated privacy of the transaction on payment request approval.
+  response: {"message": "string"}

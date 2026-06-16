@@ -1,0 +1,7 @@
+venmo.update_transaction  [PATCH /venmo/transactions/{transaction_id}]
+Update transaction information.
+  - transaction_id (integer, required): ID of the transaction to update.
+  - description (string, required): Updated description of or note about the transaction.
+  - access_token (string, required): Access token obtained from venmo app login.
+  - private (boolean, optional): Updated privacy of the transaction.
+  response: {"message": "string"}

@@ -1,0 +1,5 @@
+venmo.unlike_transaction  [DELETE /venmo/transactions/{transaction_id}/likes]
+Unlike a transaction.
+  - transaction_id (integer, required): ID of the transaction to unlike.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

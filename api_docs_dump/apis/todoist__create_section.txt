@@ -1,0 +1,7 @@
+todoist.create_section  [POST /todoist/projects/{project_id}/sections]
+Create a new section within a project.
+  - project_id (integer, required): The ID of the project. You can use 0 for your Inbox project.
+  - name (string, required): The name of the section.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - order_index (integer, optional): Index at which this section should be inserted in the current list of sections. 0 to insert at the top of the list, 1 to insert below the first section, etc. You can also use a negative value to insert from the end: -1 to insert at the end, -2 to insert just above the last section, etc.
+  response: {"message": "string", "section_id": 1}

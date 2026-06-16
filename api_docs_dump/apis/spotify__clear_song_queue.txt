@@ -1,0 +1,4 @@
+spotify.clear_song_queue  [DELETE /spotify/music_player/song_queue]
+Clear the music player song queue.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

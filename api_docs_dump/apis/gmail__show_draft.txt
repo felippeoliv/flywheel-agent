@@ -1,0 +1,5 @@
+gmail.show_draft  [GET /gmail/drafts/{draft_id}]
+Show detailed draft information.
+  - draft_id (integer, required): The ID of the draft to show.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"draft_id": 1, "subject": "string", "body": "string", "belongs_to_email_thread_id": 1, "response_to_email_id": 1, "scheduled_send_at": "2019-01-01T00:00:00", "created_at": "2019-01-01T00:00:00", "updated_at": "2019-01-01T00:00:00", "recipients": [{"name": "string", "email": "user@example.com"}], "attachments": [{"id": 1, "file_name": "string"}]}

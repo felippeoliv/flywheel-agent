@@ -1,0 +1,4 @@
+amazon.show_addresses  [GET /amazon/addresses]
+Get a list of your addresses.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: [{"address_id": 1, "name": "string", "street_address": "string", "city": "string", "state": "string", "country": "string", "zip_code": 10000.0}]

@@ -1,0 +1,17 @@
+amazon.search_products  [GET /amazon/products]
+Search for products with a query and various filtering criteria.
+  - query (string, optional): The search query string.
+  - product_type (string, optional): The type of product to search for.
+  - color (string, optional): The color of product to search for.
+  - relative_size (string, optional): The relative size of product to search for.
+  - min_price (number, optional): The minimum price for search results.
+  - max_price (number, optional): The maximum price for search results.
+  - min_product_rating (number, optional): The minimum product rating for search results.
+  - max_product_rating (number, optional): The maximum product rating for search results.
+  - min_seller_rating (number, optional): The minimum seller rating for search results.
+  - max_seller_rating (number, optional): The maximum seller rating for search results.
+  - seller_id (integer, optional): ID of the seller to search for.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the products by prefixed with +/- to reflect ascending/descending. Valid attributes: rating, price and delivery_days. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page.
+  response: [{"product_id": 1, "seller_id": 1, "product_type": "string", "name": "string", "description": "string", "price": 0.0, "delivery_days": 1.0, "inventory_quantity": 0.0, "weight": 0.0, "length": 0.0, "width": 0.0, "height": 0.0, "color": "string", "relative_size": "extra-small", "rating": 0.0, "num_product_reviews": 1, "num_product_questions": 1, "variations": [{"product_id": 1, "relative_size": "extra-small", "color": "string"}]}]

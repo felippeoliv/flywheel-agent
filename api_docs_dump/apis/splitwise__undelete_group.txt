@@ -1,0 +1,5 @@
+splitwise.undelete_group  [PATCH /splitwise/groups/{group_id}/undelete]
+Undelete a group you are a member of.
+  - group_id (integer, required): The ID of the group to undelete.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

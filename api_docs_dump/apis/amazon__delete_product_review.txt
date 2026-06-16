@@ -1,0 +1,5 @@
+amazon.delete_product_review  [DELETE /amazon/reviews/{review_id}]
+Delete a product review.
+  - review_id (integer, required): ID of the product review.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string"}

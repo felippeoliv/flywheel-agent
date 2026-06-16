@@ -1,0 +1,7 @@
+spotify.add_to_queue  [POST /spotify/music_player/song_queue]
+Add a song, album or playlist to the music player song queue.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - song_id (integer, optional): ID of the song to add to queue.
+  - album_id (integer, optional): ID of the album to add to queue.
+  - playlist_id (integer, optional): ID of the playlist to add to queue.
+  response: {"message": "string"}

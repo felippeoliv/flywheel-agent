@@ -1,0 +1,5 @@
+spotify.show_album_privates  [GET /spotify/albums/{album_id}/privates]
+Show information about the album that is private to the user.
+  - album_id (integer, required): The album id to retrieve.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"liked": true, "reviewed": true, "in_album_library": true}

@@ -1,0 +1,5 @@
+todoist.show_task_comment  [GET /todoist/task_comments/{task_comment_id}]
+Show a task comment.
+  - task_comment_id (integer, required): The ID of the task comment.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"task_id": 1, "content": "string", "created_at": "2019-01-01T00:00:00", "task_comment_id": 1, "user": {"name": "string", "email": "user@example.com"}, "attachment_file_names": ["string"]}

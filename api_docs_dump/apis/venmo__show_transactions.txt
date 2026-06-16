@@ -1,0 +1,17 @@
+venmo.show_transactions  [GET /venmo/transactions]
+Get a list of your transactions.
+  - access_token (string, required): Access token obtained from venmo app login.
+  - query (string, optional): Search query string.
+  - user_email (string, optional): If passed, only transactions between you and user with this email address will be shown.
+  - min_created_at (string, optional): Minimum created_at datetime to filter transactions in YYYY-MM-DD format.
+  - max_created_at (string, optional): Maximum created_at datetime to filter transactions in YYYY-MM-DD format.
+  - min_like_count (integer, optional): Minimum like count to filter transactions.
+  - max_like_count (integer, optional): Maximum like count to filter transactions.
+  - min_amount (number, optional): Minimum amount to filter transactions.
+  - max_amount (number, optional): Maximum amount to filter transactions.
+  - private (boolean, optional): Filter transactions by privacy.
+  - direction (string, optional): Filter transactions by direction of the transaction (sent or received). Will skip filtering if not passed.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the transactions by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at, like_count and amount. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page.
+  response: [{"transaction_id": 1, "amount": 0.0, "description": "string", "created_at": "2019-01-01T00:00:00", "updated_at": "2019-01-01T00:00:00", "private": true, "like_count": 1, "payment_card_digits": "string", "comment_count": 1, "sender": {"name": "string", "email": "user@example.com"}, "receiver": {"name": "string", "email": "user@example.com"}}]

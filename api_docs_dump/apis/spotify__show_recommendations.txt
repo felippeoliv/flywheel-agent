@@ -1,0 +1,6 @@
+spotify.show_recommendations  [GET /spotify/recommendations]
+Get personalized song recommendations for the user.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"song_id": 1, "title": "string", "album_id": 1, "album_title": "string", "duration": 1, "artists": [{"id": 1, "name": "string"}]}]

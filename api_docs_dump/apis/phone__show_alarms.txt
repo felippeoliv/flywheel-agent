@@ -1,0 +1,6 @@
+phone.show_alarms  [GET /phone/alarms]
+Get a list of alarms.
+  - access_token (string, required): Access token obtained from phone app login.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"alarm_id": 1, "time": "string", "repeat_days": ["monday"], "label": "string", "enabled": true, "snooze_minutes": 0.0, "vibration": true, "created_at": "2019-01-01T00:00:00", "user": {"name": "string", "phone_number": "string"}}]

@@ -1,0 +1,5 @@
+spotify.add_song_to_library  [POST /spotify/library/songs/{song_id}]
+Add a song to the user's song library.
+  - song_id (integer, required): The song id to add.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

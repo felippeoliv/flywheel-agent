@@ -1,0 +1,8 @@
+splitwise.download_payment_receipt_file  [GET /splitwise/payments/{payment_id}/file]
+Download receipt file attachment for a payment.
+  - payment_id (integer, required): The ID of the payment to download receipt for.
+  - file_system_access_token (string, required): Access token obtained from file_system app login.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - download_to_file_path (string, optional): The file path to download the receipt file to in file system app. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'. If not passed, it will be saved in your ~/downloads directory.
+  - overwrite (boolean, optional): Whether to overwrite the file if it already exists.
+  response: {"message": "string", "file_path": "string"}

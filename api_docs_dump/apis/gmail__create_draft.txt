@@ -1,0 +1,12 @@
+gmail.create_draft  [POST /gmail/drafts]
+Create a new draft.
+  - recipient_email_addresses (list[string], required): List of recipient email addresses.
+  - body (string, required): The body of the draft.
+  - access_token (string, required): Access token obtained from gmail app login.
+  - subject (string, optional): The subject of the draft. Must be None if it's a reply to an email.
+  - belongs_to_email_thread_id (integer, optional): The ID of the email thread that the draft should belong to. Must be passed if it's a reply to or forward of an email.
+  - response_to_email_id (integer, optional): The ID of the email in the thread that the draft should responds to.
+  - attachment_file_paths (list[string], optional): List of absolute file paths (starting with /) from the file_system app to attach to the draft.
+  - scheduled_send_at (string, optional): If set, the draft will be sent at the specified future time in YYYY-MM-DD|HH:MM:SS format. Otherwise, it will not be sent until you manually send it.
+  - file_system_access_token (string, optional): Access token obtained from file_system app login. Only needed for attachments.
+  response: {"message": "string", "draft_id": 1}

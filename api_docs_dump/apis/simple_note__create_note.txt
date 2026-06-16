@@ -1,0 +1,8 @@
+simple_note.create_note  [POST /simple_note/notes]
+Create a new note.
+  - title (string, required): Title of the note
+  - content (string, required): Content of the note
+  - access_token (string, required): Access token obtained from simple_note app login.
+  - tags (list[string], optional): Tags for the note.
+  - pinned (boolean, optional): Pinned status of the note.
+  response: {"message": "string", "note_id": 1}

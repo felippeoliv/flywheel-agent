@@ -1,0 +1,6 @@
+amazon.update_product_quantity_in_cart  [PATCH /amazon/cart/{product_id}]
+Update product quantity in the user cart.
+  - product_id (integer, required): ID of the product to be updated in the cart.
+  - quantity (integer, required): The new quantity of the product to be updated in the cart.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string"}

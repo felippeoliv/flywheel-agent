@@ -1,0 +1,5 @@
+file_system.show_file  [GET /file_system/file]
+Show a file's content and other details, if it exists.
+  - file_path (string, required): Path of the file. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - access_token (string, required): Access token obtained from file_system app login.
+  response: {"file_id": 1, "path": "string", "content": "string", "created_at": "2019-01-01T00:00:00", "updated_at": "2019-01-01T00:00:00"}

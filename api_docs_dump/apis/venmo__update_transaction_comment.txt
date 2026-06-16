@@ -1,0 +1,6 @@
+venmo.update_transaction_comment  [PATCH /venmo/comments/{comment_id}]
+Update a transaction comment.
+  - comment_id (integer, required): ID of the transaction comment to update.
+  - comment (string, required): Updated comment on the transaction.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

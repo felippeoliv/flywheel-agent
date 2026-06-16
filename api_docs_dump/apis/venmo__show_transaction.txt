@@ -1,0 +1,5 @@
+venmo.show_transaction  [GET /venmo/transactions/{transaction_id}]
+Show transaction details.
+  - transaction_id (integer, required): ID of the transaction to retrieve.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"transaction_id": 1, "amount": 0.0, "description": "string", "created_at": "2019-01-01T00:00:00", "updated_at": "2019-01-01T00:00:00", "private": true, "like_count": 1, "payment_card_digits": "string", "comment_count": 1, "sender": {"name": "string", "email": "user@example.com"}, "receiver": {"name": "string", "email": "user@example.com"}}

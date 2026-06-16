@@ -1,0 +1,5 @@
+spotify.unlike_song  [DELETE /spotify/songs/{song_id}/like]
+Unlike a song.
+  - song_id (integer, required): The song id to unlike.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

@@ -1,0 +1,5 @@
+file_system.delete_directory  [DELETE /file_system/directory]
+Delete a directory with its sub-directories and files.
+  - directory_path (string, required): Path of the directory. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - access_token (string, required): Access token obtained from file_system app login.
+  response: {"message": "string"}

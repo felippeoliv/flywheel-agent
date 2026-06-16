@@ -1,0 +1,4 @@
+amazon.clear_wish_list  [DELETE /amazon/wish_list]
+Clear wish list.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string"}

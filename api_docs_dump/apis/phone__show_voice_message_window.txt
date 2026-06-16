@@ -1,0 +1,10 @@
+phone.show_voice_message_window  [GET /phone/messages/voice/window]
+Show voice messages with a contact around a given date and time.
+  - phone_number (string, required): The phone number of the contact to show messages with.
+  - access_token (string, required): Access token obtained from phone app login.
+  - min_datetime (string, optional): The minimum datetime to show messages on or after in YYYY-MM-DD|HH:MM:SS format.
+  - max_datetime (string, optional): The maximum datetime to show messages on or before in YYYY-MM-DD|HH:MM:SS format.
+  - pagination_order (string, optional): If set to ascending, as page_index increases, the results will have newer messages. If set to descending, as page_index increases, the results will have older messages. The messages within each page will always be oldest to newest.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"voice_message_id": 1, "sender": {"contact_id": 1, "name": "string", "phone_number": "string"}, "receiver": {"contact_id": 1, "name": "string", "phone_number": "string"}, "message": "string", "sent_at": "2019-01-01T00:00:00"}]

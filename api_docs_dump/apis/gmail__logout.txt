@@ -1,0 +1,4 @@
+gmail.logout  [POST /gmail/auth/logout]
+Logout from your account.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

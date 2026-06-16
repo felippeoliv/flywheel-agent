@@ -1,0 +1,5 @@
+venmo.delete_payment_request  [DELETE /venmo/payment_requests/{payment_request_id}]
+Delete a payment request.
+  - payment_request_id (integer, required): ID of the payment request to delete.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

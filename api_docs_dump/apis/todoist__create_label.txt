@@ -1,0 +1,6 @@
+todoist.create_label  [POST /todoist/labels]
+Create a new label.
+  - name (string, required): The name of the label.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - color (string, optional): The color of the label.
+  response: {"message": "string", "label_id": 1}

@@ -1,0 +1,5 @@
+todoist.delete_section  [DELETE /todoist/sections/{section_id}]
+Delete a section within a project.
+  - section_id (integer, required): The ID of the section to delete.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

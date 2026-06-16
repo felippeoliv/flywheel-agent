@@ -1,0 +1,4 @@
+file_system.delete_account  [DELETE /file_system/account]
+Delete your account.
+  - access_token (string, required): Access token obtained from file_system app login.
+  response: {"message": "string"}

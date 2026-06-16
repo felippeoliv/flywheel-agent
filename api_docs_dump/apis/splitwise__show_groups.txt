@@ -1,0 +1,7 @@
+splitwise.show_groups  [GET /splitwise/groups]
+Get a list of groups you are a member of.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - delete (boolean, optional): Filter groups by whether they are deleted or not.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"group_id": 1, "name": "string", "description": "string", "created_at": "2019-01-01T00:00:00", "deleted": true, "creator": {"name": "string", "email": "user@example.com"}, "members": [{"name": "string", "email": "user@example.com"}], "invitation_code": "string"}]

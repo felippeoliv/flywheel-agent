@@ -1,0 +1,6 @@
+api_docs.search_api_docs  [GET /api_docs/api_docs]
+Search for relevant API docs.
+  - query (string, optional): The search query string.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"app_name": "string", "api_name": "string", "path": "string", "method": "string", "description": "string", "parameters": [{"name": "string", "type": "string", "required": true, "description": "string", "default": null, "constraints": ["string"]}], "response_schemas": {"success": [{}], "failure": [{}]}}]

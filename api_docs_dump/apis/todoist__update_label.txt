@@ -1,0 +1,7 @@
+todoist.update_label  [PATCH /todoist/labels/{label_id}]
+Update label information.
+  - label_id (integer, required): The ID of the label.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - name (string, optional): The updated name of the label.
+  - color (string, optional): The updated color of the label.
+  response: {"message": "string"}

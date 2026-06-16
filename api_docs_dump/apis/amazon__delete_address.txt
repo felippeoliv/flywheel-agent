@@ -1,0 +1,5 @@
+amazon.delete_address  [DELETE /amazon/addresses/{address_id}]
+Delete address information.
+  - address_id (integer, required): ID of the address to be deleted.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string"}

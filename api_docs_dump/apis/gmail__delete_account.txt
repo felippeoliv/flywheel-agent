@@ -1,0 +1,4 @@
+gmail.delete_account  [DELETE /gmail/account]
+Delete your account.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

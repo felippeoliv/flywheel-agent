@@ -1,0 +1,5 @@
+spotify.show_artist_following  [GET /spotify/artists/{artist_id}/following]
+Show if the user is following the artist.
+  - artist_id (integer, required): The artist id to retrieve.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"following": true}

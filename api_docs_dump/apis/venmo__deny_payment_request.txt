@@ -1,0 +1,5 @@
+venmo.deny_payment_request  [POST /venmo/payment_requests/{payment_request_id}/deny]
+Deny a payment request.
+  - payment_request_id (integer, required): ID of the payment request to deny.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

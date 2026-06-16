@@ -1,0 +1,4 @@
+spotify.show_album_review  [GET /spotify/album_reviews/{review_id}]
+Show an album review.
+  - review_id (integer, required): The album review id to retrieve.
+  response: {"album_review_id": 1, "album_id": 1, "rating": 1.0, "title": "string", "text": "string", "created_at": "2019-01-01T00:00:00", "user": {"name": "string", "email": "user@example.com"}}

@@ -1,0 +1,5 @@
+spotify.unlike_album  [DELETE /spotify/albums/{album_id}/like]
+Unlike a album.
+  - album_id (integer, required): The album id to unlike.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

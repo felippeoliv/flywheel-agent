@@ -1,0 +1,5 @@
+spotify.remove_album_from_library  [DELETE /spotify/library/albums/{album_id}]
+Remove an album from the user's album library.
+  - album_id (integer, required): The album id to remove.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

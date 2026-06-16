@@ -1,0 +1,5 @@
+spotify.loop_song  [POST /spotify/music_player/loop]
+Set whether to loop the current song.
+  - loop (boolean, required): Whether to loop the current song.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

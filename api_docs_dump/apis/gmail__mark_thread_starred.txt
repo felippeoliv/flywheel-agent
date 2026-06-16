@@ -1,0 +1,5 @@
+gmail.mark_thread_starred  [POST /gmail/email_threads/{email_thread_id}/starred]
+Mark an email thread as starred.
+  - email_thread_id (integer, required): The ID of the email thread to star.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

@@ -1,0 +1,4 @@
+splitwise.delete_account  [DELETE /splitwise/account]
+Delete your account.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

@@ -1,0 +1,6 @@
+venmo.update_payment_card  [PATCH /venmo/payment_cards/{payment_card_id}]
+Update payment card information.
+  - payment_card_id (integer, required): ID of the payment card to update.
+  - card_name (string, required): Name of the payment card to update.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

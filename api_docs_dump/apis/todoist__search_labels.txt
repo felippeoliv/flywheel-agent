@@ -1,0 +1,10 @@
+todoist.search_labels  [GET /todoist/labels]
+Search your or task labels.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - query (string, optional): The search query string.
+  - task_id (integer, optional): The ID of the task to filter by.
+  - color (string, optional): The color of the label to filter by.
+  - task_attached (boolean, optional): If true, and task_id is passed, labels attached to the task will be returned. If false, and task_id is passed, your labels that are not already attached to the task will be returned. It will be ignored if task_id is not passed.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"name": "string", "color": "charcoal", "label_id": 1, "creator": {"name": "string", "email": "user@example.com"}}]

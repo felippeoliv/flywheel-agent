@@ -1,0 +1,5 @@
+spotify.remove_downloaded_song  [DELETE /spotify/downloaded_songs/{song_id}]
+Remove a song from downloads.
+  - song_id (integer, required): The song id to remove from downloads.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

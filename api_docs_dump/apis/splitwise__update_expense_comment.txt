@@ -1,0 +1,6 @@
+splitwise.update_expense_comment  [PATCH /splitwise/expense_comments/{comment_id}]
+Update a comment you posted on an expense.
+  - comment_id (integer, required): The ID of the expense comment to update.
+  - comment (string, required): The updated comment for the expense.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

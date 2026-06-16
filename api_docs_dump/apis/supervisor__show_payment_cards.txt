@@ -1,0 +1,3 @@
+supervisor.show_payment_cards  [GET /supervisor/payment_cards]
+Show your supervisor's payment_cards.
+  response: [{"owner_name": "string", "card_name": "Visa", "card_number": 1000000000000000.0, "expiry_year": 1, "expiry_month": 1.0, "cvv_number": 100.0}]

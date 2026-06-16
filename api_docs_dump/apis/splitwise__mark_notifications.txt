@@ -1,0 +1,5 @@
+splitwise.mark_notifications  [PATCH /splitwise/notifications]
+Mark all notifications as read or unread.
+  - read (boolean, required): Read status of the notification.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

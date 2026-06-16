@@ -1,0 +1,5 @@
+api_docs.show_api_doc  [GET /api_docs/api_doc]
+Show detailed API doc.
+  - app_name (string, required): App name for the API.
+  - api_name (string, required): Name of the API.
+  response: {"app_name": "string", "api_name": "string", "path": "string", "method": "string", "description": "string", "parameters": [{"name": "string", "type": "string", "required": true, "description": "string", "default": null, "constraints": ["string"]}], "response_schemas": {"success": [{}], "failure": [{}]}}

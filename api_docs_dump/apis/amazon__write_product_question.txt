@@ -1,0 +1,6 @@
+amazon.write_product_question  [POST /amazon/products/{product_id}/questions]
+Post a question about a product.
+  - product_id (integer, required): ID of the product to ask a question about.
+  - question (string, required): Question to be written for the product.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string", "question_id": 1}

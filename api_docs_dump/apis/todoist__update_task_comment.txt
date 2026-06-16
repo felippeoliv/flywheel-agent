@@ -1,0 +1,6 @@
+todoist.update_task_comment  [PATCH /todoist/task_comments/{task_comment_id}]
+Update a task comment.
+  - task_comment_id (integer, required): The ID of the task comment.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - content (string, optional): The updated content of the comment.
+  response: {"message": "string"}

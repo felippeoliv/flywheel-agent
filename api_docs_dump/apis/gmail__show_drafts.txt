@@ -1,0 +1,15 @@
+gmail.show_drafts  [GET /gmail/drafts]
+Show a list of user drafts.
+  - access_token (string, required): Access token obtained from gmail app login.
+  - query (string, optional): The search query string.
+  - recipient_email (string, optional): Filter emails by recipient email address.
+  - attachment (boolean, optional): Filter drafts by attachment status.
+  - scheduled (boolean, optional): Filter drafts by whether they are scheduled to be sent in the future.
+  - belongs_to_email_thread_id (integer, optional): Filter drafts by email thread ID that the draft belongs to.
+  - response_to_email_id (integer, optional): Filter drafts by email ID that the draft responds to.
+  - min_created_at (string, optional): Filter drafts by minimum created_at date in YYYY-MM-DD format.
+  - max_created_at (string, optional): Filter drafts by maximum created_at date in YYYY-MM-DD format.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the drafts by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at and updated_at. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page. If both query and sort_by are not given, null, or empty, sort_by will default to -updated_at.
+  response: [{"draft_id": 1, "subject": "string", "body": "string", "belongs_to_email_thread_id": 1, "response_to_email_id": 1, "scheduled_send_at": "2019-01-01T00:00:00", "created_at": "2019-01-01T00:00:00", "updated_at": "2019-01-01T00:00:00", "recipients": [{"name": "string", "email": "user@example.com"}], "attachments": [{"id": 1, "file_name": "string"}]}]

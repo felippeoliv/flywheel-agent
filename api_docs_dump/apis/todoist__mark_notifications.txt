@@ -1,0 +1,5 @@
+todoist.mark_notifications  [PATCH /todoist/notifications]
+Mark all notifications as read or unread.
+  - read (boolean, required): Read status of the notification.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

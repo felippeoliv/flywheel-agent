@@ -1,0 +1,3 @@
+phone.get_current_date_and_time  [GET /phone/date_time]
+Show current date and time.
+  response: {"date": "string", "time": "string"}

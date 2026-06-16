@@ -1,0 +1,8 @@
+splitwise.attach_payment_receipt_file  [POST /splitwise/payments/{payment_id}/file]
+Attach a receipt file to a payment.
+  - payment_id (integer, required): The ID of the payment to attach receipt to.
+  - receipt_file_path (string, required): The file path of the receipt file to attach to this payment.
+  - file_system_access_token (string, required): Access token obtained from file_system app login.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - overwrite (boolean, optional): Whether to overwrite the existing receipt file if it already exists.
+  response: {"message": "string"}

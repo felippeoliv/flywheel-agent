@@ -1,0 +1,8 @@
+todoist.upload_attachment  [POST /todoist/task_comments/{task_comment_id}/attachments]
+Upload an attachment to a task comment.
+  - task_comment_id (integer, required): The ID of the task comment to attach the file to.
+  - upload_from_file_path (string, required): The file path in file system app to upload as an attachment.
+  - file_system_access_token (string, required): Access token obtained from file_system app login.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - overwrite (boolean, optional): Whether to overwrite the attachment if one with the same name already exists.
+  response: {"message": "string", "attachment_file_name": "string"}

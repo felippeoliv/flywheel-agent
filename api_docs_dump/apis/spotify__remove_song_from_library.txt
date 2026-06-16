@@ -1,0 +1,5 @@
+spotify.remove_song_from_library  [DELETE /spotify/library/songs/{song_id}]
+Remove a song from the user's song library.
+  - song_id (integer, required): The song id to remove.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

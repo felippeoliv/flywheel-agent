@@ -1,0 +1,6 @@
+gmail.search_users  [GET /gmail/users]
+Search Gmail users by name or email address.
+  - query (string, optional): Search query string.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"first_name": "string", "last_name": "string", "email": "user@example.com", "registered_at": "2019-01-01T00:00:00"}]

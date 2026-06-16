@@ -1,0 +1,5 @@
+todoist.delete_task_comment  [DELETE /todoist/task_comments/{task_comment_id}]
+Delete a task comment.
+  - task_comment_id (integer, required): The ID of the comment to delete.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

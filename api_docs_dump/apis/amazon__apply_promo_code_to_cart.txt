@@ -1,0 +1,5 @@
+amazon.apply_promo_code_to_cart  [POST /amazon/cart_promos]
+Apply a promo code to your cart.
+  - promo_code (string, required): The promo code to be applied to the cart.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string"}

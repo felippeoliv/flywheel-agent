@@ -1,0 +1,4 @@
+spotify.show_song_queue  [GET /spotify/music_player/song_queue]
+Get the music player song queue. Songs are played in the order of the queue in a cycle.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: [{"song_id": 1, "title": "string", "album_id": 1, "album_title": "string", "duration": 1, "artists": [{"id": 1, "name": "string"}], "position": 1, "is_playing": true, "is_current": true}]

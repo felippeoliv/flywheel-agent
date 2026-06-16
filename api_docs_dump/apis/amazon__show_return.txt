@@ -1,0 +1,5 @@
+amazon.show_return  [GET /amazon/returns/{return_id}]
+Show product return status.
+  - return_id (integer, required): ID of the product return.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"return_id": 1, "order_id": 1, "product_id": 1, "product_name": "string", "quantity": 1.0, "deliverer_id": 1, "deliverer_name": "UPS", "refund_amount": 0.0, "initiated_at": "2019-01-01T00:00:00", "returned_at": "2019-01-01T00:00:00", "confirmation_code": "string"}

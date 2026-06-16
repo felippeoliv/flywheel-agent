@@ -1,0 +1,4 @@
+phone.show_profile  [GET /phone/profile]
+Show public profile information of a user.
+  - phone_number (string, optional): Phone number of the person you want to see the profile information of.
+  response: {"first_name": "string", "last_name": "string", "phone_number": "string", "registered_at": "2019-01-01T00:00:00"}

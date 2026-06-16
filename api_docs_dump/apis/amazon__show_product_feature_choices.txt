@@ -1,0 +1,4 @@
+amazon.show_product_feature_choices  [GET /amazon/product_feature_choices]
+Show the choices of colors, relative sizes and sellers aggregated over all products of the given product type. Because it's an aggregation, the choices may not be available for all products. If product type is not passed, it will return the choices for all products in the database.
+  - product_type (string, optional): The product type to obtain feature choices for.
+  response: {"colors": ["string"], "relative_sizes": ["extra-small"], "sellers": [{"seller_id": 1, "name": "string"}]}

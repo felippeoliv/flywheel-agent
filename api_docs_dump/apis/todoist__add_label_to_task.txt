@@ -1,0 +1,6 @@
+todoist.add_label_to_task  [POST /todoist/tasks/{task_id}/labels]
+Add a label to a task.
+  - task_id (integer, required): The ID of the task.
+  - label_id (integer, required): The ID of the label to add to the task.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

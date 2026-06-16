@@ -1,0 +1,6 @@
+splitwise.post_payment_comment  [POST /splitwise/payments/{payment_id}/comments]
+Create a new payment comment.
+  - payment_id (integer, required): The ID of the payment.
+  - comment (string, required): The comment for the payment.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string", "payment_comment_id": 1}

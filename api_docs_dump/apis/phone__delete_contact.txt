@@ -1,0 +1,5 @@
+phone.delete_contact  [DELETE /phone/contacts/{contact_id}]
+Delete contact information.
+  - contact_id (integer, required): ID of the contact to be deleted.
+  - access_token (string, required): Access token obtained from phone app login.
+  response: {"message": "string"}

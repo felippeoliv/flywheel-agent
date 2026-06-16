@@ -1,0 +1,5 @@
+venmo.delete_transaction_comment  [DELETE /venmo/comments/{comment_id}]
+Delete a transaction comment.
+  - comment_id (integer, required): ID of the transaction comment to be deleted.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

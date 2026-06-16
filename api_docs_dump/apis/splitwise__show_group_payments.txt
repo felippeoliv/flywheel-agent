@@ -1,0 +1,15 @@
+splitwise.show_group_payments  [GET /splitwise/group/{group_id}/payments]
+Show all the payments that are part of the given group.
+  - group_id (integer, required): The ID of the group to filter payments.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - query (string, optional): The search query string.
+  - participant_email (string, optional): Email of the payer or receiver to filter payments.
+  - min_amount (number, optional): Filter expenses by minimum amount.
+  - max_amount (number, optional): Filter expenses by maximum amount.
+  - min_created_at (string, optional): Filter emails by minimum created_at date in YYYY-MM-DD format.
+  - max_created_at (string, optional): Filter emails by maximum created_at date in YYYY-MM-DD format.
+  - deleted (boolean, optional): Filter expenses by deleted status.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the payments by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at and amount. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page. If both query and sort_by are not given, null, or empty, sort_by will default to -created_at.
+  response: [{"payment_id": 1, "group_id": 1, "description": "string", "deleted": true, "receipt_file_name": "string", "created_at": "2019-01-01T00:00:00", "creator": {"name": "string", "email": "user@example.com"}, "payer": {"name": "string", "email": "user@example.com"}, "receiver": {"name": "string", "email": "user@example.com"}, "paid_amount": 0.0}]

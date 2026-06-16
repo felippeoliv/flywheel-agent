@@ -1,0 +1,5 @@
+venmo.like_transaction  [POST /venmo/transactions/{transaction_id}/likes]
+Like a transaction.
+  - transaction_id (integer, required): ID of the transaction to like.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

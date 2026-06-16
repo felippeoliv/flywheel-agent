@@ -1,0 +1,5 @@
+spotify.like_album  [POST /spotify/albums/{album_id}/like]
+Like a album.
+  - album_id (integer, required): The album id to like.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

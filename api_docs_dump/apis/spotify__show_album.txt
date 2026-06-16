@@ -1,0 +1,4 @@
+spotify.show_album  [GET /spotify/albums/{album_id}]
+Get details of a specific album.
+  - album_id (integer, required): The album id to retrieve.
+  response: {"album_id": 1, "title": "string", "genre": "string", "artists": [{"id": 1, "name": "string"}], "rating": 0.0, "like_count": 1, "review_count": 1, "release_date": "2019-01-01T00:00:00", "shareable_link": "string", "songs": [{"id": 1, "title": "string", "artist_ids": [1]}]}

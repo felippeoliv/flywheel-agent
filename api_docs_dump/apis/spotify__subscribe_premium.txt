@@ -1,0 +1,6 @@
+spotify.subscribe_premium  [POST /spotify/premium/subscriptions]
+Subscribe to premium membership.
+  - payment_card_id (integer, required): ID of the payment card to use for buy premium subscription.
+  - duration (string, required): Duration of the premium subscription.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string", "premium_subscription_id": 1}

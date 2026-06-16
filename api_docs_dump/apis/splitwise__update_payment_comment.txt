@@ -1,0 +1,6 @@
+splitwise.update_payment_comment  [PATCH /splitwise/payment_comments/{comment_id}]
+Update a payment comment.
+  - comment_id (integer, required): The ID of the payment comment to update.
+  - comment (string, required): The updated comment for the payment.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

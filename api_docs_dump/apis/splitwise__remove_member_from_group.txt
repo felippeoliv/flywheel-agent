@@ -1,0 +1,6 @@
+splitwise.remove_member_from_group  [DELETE /splitwise/groups/{group_id}/members/{user_email}]
+Remove a member from a group.
+  - group_id (integer, required): The ID of the group.
+  - user_email (string, required): Email of the user to remove from the group.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

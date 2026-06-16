@@ -1,0 +1,4 @@
+amazon.show_wish_list  [GET /amazon/wish_list]
+Get list of products in your wishlist.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: [{"product_id": 1, "product_name": "string", "quantity": 1.0, "price": 0.0}]

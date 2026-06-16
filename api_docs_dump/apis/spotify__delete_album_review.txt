@@ -1,0 +1,5 @@
+spotify.delete_album_review  [DELETE /spotify/album_reviews/{review_id}]
+Delete an album review.
+  - review_id (integer, required): ID of the album review.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

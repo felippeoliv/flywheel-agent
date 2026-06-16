@@ -1,0 +1,5 @@
+phone.login  [POST /phone/auth/token]
+Login to your account.
+  - username (string, required): Your account phone_number.
+  - password (string, required): Your account password.
+  response: {"access_token": "string", "token_type": "string"}

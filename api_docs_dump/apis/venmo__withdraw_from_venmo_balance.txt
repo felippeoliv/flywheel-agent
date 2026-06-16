@@ -1,0 +1,6 @@
+venmo.withdraw_from_venmo_balance  [DELETE /venmo/balance]
+Withdraw money from your Venmo balance.
+  - amount (number, required): Amount to withdraw from Venmo balance.
+  - payment_card_id (integer, required): ID of the payment card to credit the withdrawn amount to.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string", "bank_transfer_id": 1}

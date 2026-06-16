@@ -1,0 +1,5 @@
+venmo.delete_notification  [DELETE /venmo/notifications/{notification_id}]
+Delete a notification.
+  - notification_id (integer, required): ID of the notification to delete.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

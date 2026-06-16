@@ -1,0 +1,5 @@
+splitwise.regenerate_invitation_code  [PATCH /splitwise/group_invitation/{group_id}/regenerate]
+Regenerate the invitation code for a group. Anyone with this code can join the group. The old code will be invalidated.
+  - group_id (integer, required): The ID of the group.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string", "invitation_code": "string"}

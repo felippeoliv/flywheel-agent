@@ -1,0 +1,5 @@
+gmail.show_email  [GET /gmail/emails/{email_id}]
+Show detailed information about a given email.
+  - email_id (integer, required): The ID of the email to show.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"email_id": 1, "subject": "string", "body": "string", "response_to_email_id": 1, "created_at": "2019-01-01T00:00:00", "sender": {"name": "string", "email": "user@example.com"}, "recipients": [{"name": "string", "email": "user@example.com"}], "attachments": [{"id": 1, "file_name": "string"}]}

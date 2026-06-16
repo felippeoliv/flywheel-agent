@@ -1,0 +1,5 @@
+todoist.delete_label  [DELETE /todoist/labels/{label_id}]
+Delete a label.
+  - label_id (integer, required): The ID of the label to delete.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

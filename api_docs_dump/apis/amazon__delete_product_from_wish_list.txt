@@ -1,0 +1,5 @@
+amazon.delete_product_from_wish_list  [DELETE /amazon/wish_list/{product_id}]
+Remove product from the user wish list.
+  - product_id (integer, required): ID of the product to be deleted from the wish list.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string"}

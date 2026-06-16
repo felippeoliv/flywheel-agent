@@ -1,0 +1,5 @@
+gmail.unlabel_thread  [POST /gmail/email_threads/{email_thread_id}/unlabel]
+Remove label from an email thread.
+  - email_thread_id (integer, required): The ID of the email thread to unlabel.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

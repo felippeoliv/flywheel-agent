@@ -1,0 +1,7 @@
+spotify.show_playlist_library  [GET /spotify/library/playlists]
+Get a list of playlists in the user's playlist library.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - is_public (boolean, optional): Whether to show public playlists or private playlists.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"playlist_id": 1, "title": "string", "is_public": true, "rating": 0.0, "like_count": 1, "review_count": 1, "owner": {"name": "string", "email": "user@example.com"}, "created_at": "2019-01-01T00:00:00", "song_ids": [1]}]

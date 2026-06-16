@@ -1,0 +1,4 @@
+splitwise.logout  [POST /splitwise/auth/logout]
+Logout from your account.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

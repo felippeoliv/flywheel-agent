@@ -1,0 +1,6 @@
+gmail.remove_attachment_from_draft  [DELETE /gmail/drafts/{draft_id}/attachments/{attachment_id}]
+Delete an attachment from a draft.
+  - draft_id (integer, required): The ID of the draft to delete the attachment from.
+  - attachment_id (integer, required): The ID of the attachment to delete.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

@@ -1,0 +1,5 @@
+gmail.mark_thread_unarchived  [POST /gmail/email_threads/{email_thread_id}/unarchived]
+Mark an email thread as unarchived.
+  - email_thread_id (integer, required): The ID of the email thread to unarchive.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

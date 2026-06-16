@@ -1,0 +1,5 @@
+splitwise.delete_notification  [DELETE /splitwise/notifications/{notification_id}]
+Delete a notification.
+  - notification_id (integer, required): The ID of the notification.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

@@ -1,0 +1,3 @@
+amazon.show_return_deliverers  [GET /amazon/return_deliverers]
+Get a list of product return deliverers.
+  response: [{"deliverer_id": 1, "name": "UPS"}]

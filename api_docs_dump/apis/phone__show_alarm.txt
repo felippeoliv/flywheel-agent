@@ -1,0 +1,5 @@
+phone.show_alarm  [GET /phone/alarms/{alarm_id}]
+Show alarm details.
+  - alarm_id (integer, required): ID of the alarm to show.
+  - access_token (string, required): Access token obtained from phone app login.
+  response: {"alarm_id": 1, "time": "string", "repeat_days": ["monday"], "label": "string", "enabled": true, "snooze_minutes": 0.0, "vibration": true, "created_at": "2019-01-01T00:00:00", "user": {"name": "string", "phone_number": "string"}}

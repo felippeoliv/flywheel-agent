@@ -1,0 +1,8 @@
+gmail.upload_attachments_to_draft  [POST /gmail/drafts/{draft_id}/attachments]
+Upload attachments to a draft.
+  - draft_id (integer, required): The ID of the draft to upload the attachment to.
+  - attachment_file_paths (list[string], required): List of absolute file paths (starting with /) from the file_system app to attach to the email.
+  - file_system_access_token (string, required): Access token obtained from file_system app login.
+  - access_token (string, required): Access token obtained from gmail app login.
+  - overwrite (boolean, optional): Whether to overwrite the attachment if it already exists.
+  response: {"message": "string", "attachment_ids": [1]}

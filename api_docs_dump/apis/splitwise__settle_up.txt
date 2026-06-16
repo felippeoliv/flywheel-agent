@@ -1,0 +1,7 @@
+splitwise.settle_up  [POST /splitwise/settle_up]
+Settle up outstanding balance with a user in a group. This only records payment on splitwise and does not move real money.
+  - email (string, required): The email of the user to settle balance with.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - group_id (integer, optional): The ID of the group to settle balance.
+  - description (string, optional): The description of the payment.
+  response: {"message": "string"}

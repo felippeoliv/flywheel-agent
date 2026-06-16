@@ -1,0 +1,4 @@
+spotify.show_volume  [GET /spotify/music_player/volume]
+Get the volume level of the music player.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"volume": 1}

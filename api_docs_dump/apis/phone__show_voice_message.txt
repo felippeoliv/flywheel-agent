@@ -1,0 +1,5 @@
+phone.show_voice_message  [GET /phone/messages/voice/{voice_message_id}]
+Show voice message details.
+  - voice_message_id (integer, required): ID of the voice message to show.
+  - access_token (string, required): Access token obtained from phone app login.
+  response: {"voice_message_id": 1, "sender": {"contact_id": 1, "name": "string", "phone_number": "string"}, "receiver": {"contact_id": 1, "name": "string", "phone_number": "string"}, "message": "string", "sent_at": "2019-01-01T00:00:00"}

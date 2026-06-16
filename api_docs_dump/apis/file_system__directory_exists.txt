@@ -1,0 +1,5 @@
+file_system.directory_exists  [GET /file_system/directory/exists]
+Check if a directory exists.
+  - directory_path (string, required): Path of the directory. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - access_token (string, required): Access token obtained from file_system app login.
+  response: {"exists": true}

@@ -1,0 +1,8 @@
+amazon.initiate_return  [POST /amazon/returns]
+Initiate a product return.
+  - order_id (integer, required): ID of the order to be returned.
+  - product_id (integer, required): ID of the product to be returned.
+  - deliverer_id (integer, required): ID of the deliverer assigned to the return.
+  - quantity (integer, required): Quantity of the product to be returned.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string", "return_id": 1}

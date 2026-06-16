@@ -1,0 +1,5 @@
+todoist.delete_notification  [DELETE /todoist/notifications/{notification_id}]
+Delete a notification.
+  - notification_id (integer, required): The ID of the notification to delete.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

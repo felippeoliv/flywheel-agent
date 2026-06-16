@@ -1,0 +1,7 @@
+venmo.show_notifications  [GET /venmo/notifications]
+Get a list of your notifications.
+  - access_token (string, required): Access token obtained from venmo app login.
+  - read (boolean, optional): Filter notifications by read status. Will skip filtering if not passed.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"notification_id": 1, "type": "payment_request_approved", "title": "string", "message": "string", "read": true, "created_at": "2019-01-01T00:00:00", "data": {}}]

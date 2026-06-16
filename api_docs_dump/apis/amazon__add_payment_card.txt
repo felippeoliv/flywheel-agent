@@ -1,0 +1,10 @@
+amazon.add_payment_card  [POST /amazon/payment_cards]
+Add a new payment card.
+  - card_name (string, required): Name of the payment card.
+  - owner_name (string, required): Full name of the owner of the payment card.
+  - card_number (integer, required): 16-digit card number.
+  - expiry_year (integer, required): Expiration year of the payment card.
+  - expiry_month (integer, required): Expiration month of the payment card.
+  - cvv_number (integer, required): A 3-digit CVV number of the payment card.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string", "payment_card_id": 1}

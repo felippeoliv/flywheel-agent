@@ -1,0 +1,7 @@
+splitwise.update_group  [PATCH /splitwise/groups/{group_id}]
+Update group information.
+  - group_id (integer, required): The ID of the group.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - name (string, optional): The updated name of the group.
+  - description (string, optional): The updated description of the group.
+  response: {"message": "string"}

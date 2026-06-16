@@ -1,0 +1,13 @@
+todoist.update_task  [PATCH /todoist/tasks/{task_id}]
+Update task information.
+  - task_id (integer, required): The ID of the task.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - title (string, optional): The updated title of the task.
+  - description (string, optional): The updated description of the task.
+  - due_date (string, optional): The updated due date of the task in YYYY-MM-DD format.
+  - duration (number, optional): The updated duration of the task.
+  - duration_unit (string, optional): The updated unit of the task duration.
+  - is_completed (boolean, optional): Whether the task is completed.
+  - order_index (integer, optional): The updated order index of this task in the list of section tasks.
+  - priority (string, optional): The updated priority of the task.
+  response: {"message": "string"}

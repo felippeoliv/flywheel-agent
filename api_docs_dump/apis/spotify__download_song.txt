@@ -1,0 +1,5 @@
+spotify.download_song  [POST /spotify/downloaded_songs/{song_id}]
+Download a song.
+  - song_id (integer, required): The song id to download.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

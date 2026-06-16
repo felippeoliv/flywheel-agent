@@ -1,0 +1,11 @@
+phone.update_alarm  [PATCH /phone/alarms/{alarm_id}]
+Update an alarm's settings.
+  - alarm_id (integer, required): ID of the alarm to be updated.
+  - access_token (string, required): Access token obtained from phone app login.
+  - time (string, optional): The updated time of the alarm in HH:MM format.
+  - repeat_days (list[string], optional): The updated days on which the alarm should repeat.
+  - label (string, optional): The updated label for the alarm.
+  - enabled (boolean, optional): Whether the alarm is enabled or not.
+  - snooze_minutes (integer, optional): The updated duration of snooze in minutes. Use 0 for no snooze.
+  - vibration (boolean, optional): Whether the alarm should vibrate or not.
+  response: {"message": "string"}

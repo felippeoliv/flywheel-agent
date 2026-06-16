@@ -1,0 +1,5 @@
+simple_note.show_note  [GET /simple_note/notes/{note_id}]
+Show detailed information of a note, including its content.
+  - note_id (integer, required): ID of the note to be shown.
+  - access_token (string, required): Access token obtained from simple_note app login.
+  response: {"note_id": 1, "title": "string", "content": "string", "tags": ["string"], "created_at": "2019-01-01T00:00:00", "updated_at": "2019-01-01T00:00:00", "pinned": true}

@@ -1,0 +1,12 @@
+phone.add_contact  [POST /phone/contacts]
+Add a new contact.
+  - first_name (string, required): First name of the contact.
+  - last_name (string, required): Last name of the contact.
+  - phone_number (string, required): Phone number of the contact.
+  - access_token (string, required): Access token obtained from phone app login.
+  - email (string, optional): Email of the contact.
+  - relationships (list[string], optional): Relationship with the contact.
+  - birthday (string, optional): Birthday of the contact in YYYY-MM-DD format.
+  - home_address (string, optional): Home address of the contact.
+  - work_address (string, optional): Work address of the contact.
+  response: {"message": "string", "contact_id": 1}

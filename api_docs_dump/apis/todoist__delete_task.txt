@@ -1,0 +1,5 @@
+todoist.delete_task  [DELETE /todoist/tasks/{task_id}]
+Delete a task.
+  - task_id (integer, required): The ID of the task to delete.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

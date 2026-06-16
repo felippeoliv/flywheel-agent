@@ -1,0 +1,14 @@
+spotify.search_albums  [GET /spotify/albums]
+Search for albums with a query.
+  - query (string, optional): The search query string.
+  - min_rating (number, optional): The minimum rating for search results.
+  - max_rating (number, optional): The maximum rating for search results.
+  - min_release_date (string, optional): The minimum release date for search results in YYYY-MM-DD format.
+  - max_release_date (string, optional): The maximum release date for search results in YYYY-MM-DD format.
+  - min_like_count (integer, optional): The minimum like count for search results.
+  - max_like_count (integer, optional): The maximum like count for search results.
+  - genre (string, optional): The genre to filter the albums by.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the albums by prefixed with +/- to reflect ascending/descending. Valid attributes: rating and release_date. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page.
+  response: [{"album_id": 1, "title": "string", "genre": "string", "artists": [{"id": 1, "name": "string"}], "rating": 0.0, "like_count": 1, "review_count": 1, "release_date": "2019-01-01T00:00:00", "song_ids": [1]}]

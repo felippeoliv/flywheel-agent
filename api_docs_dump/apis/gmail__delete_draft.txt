@@ -1,0 +1,5 @@
+gmail.delete_draft  [DELETE /gmail/drafts/{draft_id}]
+Delete draft information.
+  - draft_id (integer, required): The ID of the draft to delete.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

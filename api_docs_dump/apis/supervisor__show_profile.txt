@@ -1,0 +1,3 @@
+supervisor.show_profile  [GET /supervisor/profile]
+Show your supervisor's profile information.
+  response: {"first_name": "string", "last_name": "string", "email": "user@example.com", "phone_number": "string", "birthday": "string", "sex": "male"}

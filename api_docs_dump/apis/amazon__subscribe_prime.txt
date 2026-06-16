@@ -1,0 +1,6 @@
+amazon.subscribe_prime  [POST /amazon/prime/subscriptions]
+Subscribe to prime membership.
+  - payment_card_id (integer, required): ID of the payment card to use for buy prime subscription.
+  - duration (string, required): Duration of the prime subscription.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string", "prime_subscription_id": 1}

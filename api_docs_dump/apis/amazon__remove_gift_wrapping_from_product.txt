@@ -1,0 +1,5 @@
+amazon.remove_gift_wrapping_from_product  [DELETE /amazon/cart/{product_id}/gift_wrap]
+Remove gift wrapping from a product in your cart.
+  - product_id (integer, required): ID of the product in your cart to be gift wrapped.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string"}

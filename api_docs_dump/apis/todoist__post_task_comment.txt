@@ -1,0 +1,8 @@
+todoist.post_task_comment  [POST /todoist/tasks/{task_id}/comments]
+Post a comment on a task, optionally with a file attachment.
+  - task_id (integer, required): The ID of the task.
+  - content (string, required): The content of the comment.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - attachment_file_paths (list[string], optional): Paths to files to be attached in this comment.
+  - file_system_access_token (string, optional): Access token obtained from file_system app login. Only needed if comment has a file attachment.
+  response: {"message": "string", "task_comment_id": 1}

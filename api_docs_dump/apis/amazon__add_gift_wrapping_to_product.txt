@@ -1,0 +1,6 @@
+amazon.add_gift_wrapping_to_product  [POST /amazon/cart/{product_id}/gift_wrap]
+Add gift wrapping to a product in your cart. If the product is already set to be gift wrapped, its quantity will be updated.
+  - product_id (integer, required): ID of the product in your cart to be gift wrapped.
+  - access_token (string, required): Access token obtained from amazon app login.
+  - quantity (integer, optional): Quantity of the product to be gift wrapped.
+  response: {"message": "string"}

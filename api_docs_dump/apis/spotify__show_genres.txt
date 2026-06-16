@@ -1,0 +1,3 @@
+spotify.show_genres  [GET /spotify/genres]
+Show the list of all music genres.
+  response: ["string"]

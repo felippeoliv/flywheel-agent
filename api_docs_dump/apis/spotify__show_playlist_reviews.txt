@@ -1,0 +1,12 @@
+spotify.show_playlist_reviews  [GET /spotify/playlists/{playlist_id}/reviews]
+Show a list of reviews for your playlist or others' public playlist.
+  - playlist_id (integer, required): The playlist id to retrieve reviews for.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - query (string, optional): The search query string.
+  - user_email (string, optional): Email of the user to filter reviews by.
+  - min_rating (integer, optional): The minimum rating for a review.
+  - max_rating (integer, optional): The maximum rating for a review.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the playlist reviews by prefixed with +/- to reflect ascending/descending. Valid attributes: rating and created_at. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page.
+  response: [{"playlist_review_id": 1, "playlist_id": 1, "rating": 1.0, "title": "string", "text": "string", "created_at": "2019-01-01T00:00:00", "user": {"name": "string", "email": "user@example.com"}}]

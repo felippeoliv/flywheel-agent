@@ -1,0 +1,13 @@
+phone.update_contact  [PATCH /phone/contacts/{contact_id}]
+Update contact information.
+  - contact_id (integer, required): ID of the contact to update.
+  - access_token (string, required): Access token obtained from phone app login.
+  - first_name (string, optional): Updated first name of the contact.
+  - last_name (string, optional): Updated last name of the contact.
+  - phone_number (string, optional): Updated phone number of the contact.
+  - email (string, optional): Updated email of the contact.
+  - relationships (list[string], optional): Updated relationship with the contact.
+  - birthday (string, optional): Updated birthday of the contact in YYYY-MM-DD format.
+  - home_address (string, optional): Updated home address of the contact.
+  - work_address (string, optional): Updated work address of the contact.
+  response: {"message": "string"}

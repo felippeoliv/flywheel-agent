@@ -1,0 +1,6 @@
+todoist.remove_label_from_task  [DELETE /todoist/tasks/{task_id}/labels/{label_id}]
+Remove a label from a task.
+  - task_id (integer, required): The ID of the task.
+  - label_id (integer, required): The ID of the label to remove from the task.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

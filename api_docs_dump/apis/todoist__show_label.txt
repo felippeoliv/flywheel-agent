@@ -1,0 +1,4 @@
+todoist.show_label  [GET /todoist/labels/{label_id}]
+Show label details based on its ID.
+  - label_id (integer, required): The ID of the label.
+  response: {"name": "string", "color": "charcoal", "label_id": 1, "creator": {"name": "string", "email": "user@example.com"}}

@@ -1,0 +1,4 @@
+spotify.logout  [POST /spotify/auth/logout]
+Logout from your account.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

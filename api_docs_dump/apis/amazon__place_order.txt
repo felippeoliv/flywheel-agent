@@ -1,0 +1,6 @@
+amazon.place_order  [POST /amazon/orders]
+Place an order for all the items in your cart.
+  - payment_card_id (integer, required): ID of the payment card to use for this order.
+  - address_id (integer, required): ID of the address used for shipping this order.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string", "order_id": 1}

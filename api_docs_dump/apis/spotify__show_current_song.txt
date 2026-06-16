@@ -1,0 +1,4 @@
+spotify.show_current_song  [GET /spotify/music_player/current_song]
+Show details of the current song on the queue.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"song_id": 1, "title": "string", "album_id": 1, "album_title": "string", "duration": 1, "artists": [{"id": 1, "name": "string"}], "played_seconds": 1, "is_playing": true, "is_looping": true}

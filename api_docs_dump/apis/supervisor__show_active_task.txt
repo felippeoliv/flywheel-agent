@@ -1,0 +1,3 @@
+supervisor.show_active_task  [GET /supervisor/active_task]
+Show the currently active task assigned to you by the supervisor.
+  response: {"instruction": "string", "status": "string", "answer": "string"}

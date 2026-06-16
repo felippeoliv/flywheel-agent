@@ -1,0 +1,6 @@
+gmail.send_email_from_draft  [POST /gmail/drafts/{draft_id}/send]
+Send a new email from a draft right away.
+  - draft_id (integer, required): The ID of the draft to send.
+  - access_token (string, required): Access token obtained from gmail app login.
+  - file_system_access_token (string, optional): Access token obtained from file_system app login. Only needed if draft has attachments.
+  response: {"message": "string", "sent_email_thread_id": 1, "sent_email_id": 1}

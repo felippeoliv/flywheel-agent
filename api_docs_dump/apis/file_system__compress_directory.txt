@@ -1,0 +1,8 @@
+file_system.compress_directory  [POST /file_system/directory/compress]
+Compress a directory.
+  - directory_path (string, required): Path of the directory to compress. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - access_token (string, required): Access token obtained from file_system app login.
+  - compressed_file_path (string, optional): Path of the compressed file. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'. If passed, must have an extension: zip or tar. If not passed, it'll be stored as a zip file with the base name of directory_path in directory_path's parent directory.
+  - delete_directory (boolean, optional): Whether to delete the directory after compression.
+  - overwrite (boolean, optional): Whether to overwrite the compressed file if it already exists.
+  response: {"message": "string", "compressed_file_path": "string"}

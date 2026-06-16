@@ -1,0 +1,4 @@
+simple_note.logout  [POST /simple_note/auth/logout]
+Logout from your account.
+  - access_token (string, required): Access token obtained from simple_note app login.
+  response: {"message": "string"}

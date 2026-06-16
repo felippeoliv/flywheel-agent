@@ -1,0 +1,5 @@
+amazon.show_order  [GET /amazon/order/{order_id}]
+Get details of a past order.
+  - order_id (integer, required): ID of the order to be shown.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"order_id": 1, "address_id": 1, "payment_card_id": 1, "name": "string", "tax": 0.0, "delivery_fee": 0.0, "gift_wrap_fee": 0.0, "discount": 0.0, "created_at": "2019-01-01T00:00:00", "address_text": "string", "payment_card_digits": "string", "paid_amount": 0.0, "order_items": [{"product_id": 1, "ordered_quantity": 1, "returned_quantity": 1, "gift_wrap_quantity": 1, "price": 0.0, "expected_delivery_at": "2019-01-01T00:00:00", "delivered_at": "2019-01-01T00:00:00"}]}

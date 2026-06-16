@@ -1,0 +1,4 @@
+splitwise.delete_notifications  [DELETE /splitwise/notifications]
+Delete all of your notifications.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

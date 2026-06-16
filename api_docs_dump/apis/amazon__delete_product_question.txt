@@ -1,0 +1,5 @@
+amazon.delete_product_question  [DELETE /amazon/questions/{question_id}]
+Delete a product question.
+  - question_id (integer, required): ID of the question to delete.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string"}

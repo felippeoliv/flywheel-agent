@@ -1,0 +1,6 @@
+gmail.delete_email_in_thread  [DELETE /gmail/email_threads/{email_thread_id}/emails/{email_id}]
+Delete an email in a thread.
+  - email_thread_id (integer, required): The ID of the email thread to delete an email from.
+  - email_id (integer, required): The ID of the email to delete.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

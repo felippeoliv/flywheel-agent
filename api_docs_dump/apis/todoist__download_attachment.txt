@@ -1,0 +1,9 @@
+todoist.download_attachment  [GET /todoist/task_comments/{task_comment_id}/attachments/{attachment_file_name}]
+Download the attachment of a task comment.
+  - task_comment_id (integer, required): The ID of the comment to download the attachment from.
+  - attachment_file_name (string, required): Name of the file attached to the task comment.
+  - file_system_access_token (string, required): Access token obtained from file_system app login.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - download_to_file_path (string, optional): The file path to download the file attachment to in file system app. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'. If not passed, it will be saved in your ~/downloads directory.
+  - overwrite (boolean, optional): Whether to overwrite the file if it already exists.
+  response: {"message": "string", "file_path": "string"}

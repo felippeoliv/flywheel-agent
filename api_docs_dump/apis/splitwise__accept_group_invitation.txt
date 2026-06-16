@@ -1,0 +1,5 @@
+splitwise.accept_group_invitation  [POST /splitwise/group_invitation/{invitation_code}/accept]
+Accept a group invitation shared with you by one of its members.
+  - invitation_code (string, required): The group invitation shared with you by one of its members.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

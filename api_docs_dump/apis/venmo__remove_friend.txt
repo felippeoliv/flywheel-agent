@@ -1,0 +1,5 @@
+venmo.remove_friend  [DELETE /venmo/friends/{user_email}]
+Remove a friend from your friend list.
+  - user_email (string, required): Email address of the friend to remove.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

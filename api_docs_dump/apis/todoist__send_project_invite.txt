@@ -1,0 +1,6 @@
+todoist.send_project_invite  [POST /todoist/projects/{project_id}/invite]
+Invite a collaborator to join a project. They will be notified via email.
+  - project_id (integer, required): The ID of the project.
+  - email (string, required): Email of the user to invite as a collaborator.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string", "invite_code": "string"}

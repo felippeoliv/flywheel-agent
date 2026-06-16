@@ -1,0 +1,6 @@
+splitwise.show_group_balance  [GET /splitwise/balance/group]
+For the given group, show the detailed breakdown of amounts different members owe to each other. If group_id is not passed, show the amounts you owe to others and vice-versa for non-grouped expenses/payments.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - group_id (integer, optional): The ID of the group to show balance of. If not passed, it will show balance from non-grouped expenses/payments.
+  - email (string, optional): If passed, only balance of this member of the group will be shown. Otherwise, balance of all members will be shown. If group_id is not passed, email can only be your own email or None.
+  response: [{"source": {"name": "string", "email": "user@example.com"}, "source_owes_to_targets": {"total": 0.0, "breakdown": [{"email": "user@example.com", "name": "string", "amount": 0.0}]}, "targets_owe_to_source": {"total": 0.0, "breakdown": [{"email": "user@example.com", "name": "string", "amount": 0.0}]}}]

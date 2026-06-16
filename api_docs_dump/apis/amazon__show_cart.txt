@@ -1,0 +1,4 @@
+amazon.show_cart  [GET /amazon/cart]
+show your cart.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"delivery_fee": 0.0, "base_cost": 0.0, "tax": 0.0, "gift_wrap_fee": 0.0, "discount": 0.0, "total_cost": 0.0, "promo_code": "string", "promo_valid": true, "cart_items": [{"product_id": 1, "product_name": "string", "delivery_days": 1, "quantity": 1, "price": 0.0, "gift_wrap_quantity": 1}]}

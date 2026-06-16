@@ -1,0 +1,4 @@
+gmail.show_account  [GET /gmail/account]
+Show your account information. Unlike show_profile, this includes private information.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"first_name": "string", "last_name": "string", "email": "user@example.com", "registered_at": "2019-01-01T00:00:00", "last_logged_in": "2019-01-01T00:00:00"}

@@ -1,0 +1,11 @@
+gmail.update_draft  [PATCH /gmail/drafts/{draft_id}]
+Update draft information.
+  - draft_id (integer, required): The ID of the draft to update.
+  - access_token (string, required): Access token obtained from gmail app login.
+  - email_addresses (list[string], optional): List of recipient email addresses.
+  - subject (string, optional): The updated subject of the draft.
+  - body (string, optional): The updated body of the draft.
+  - belongs_to_email_thread_id (integer, optional): The updated ID of the email thread that the draft should belong to. Must be passed if it's a reply to an email.
+  - response_to_email_id (integer, optional): The updated ID of the email in the thread that the draft is a response to.
+  - scheduled_send_at (string, optional): The updated time at which the draft should be sent in YYYY-MM-DD|HH:MM:SS format.To remove the scheduled delivery, pass 'None' string, as leaving it empty or null is for when you don't want to update it.
+  response: {"message": "string"}

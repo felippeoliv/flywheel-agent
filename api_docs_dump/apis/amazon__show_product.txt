@@ -1,0 +1,4 @@
+amazon.show_product  [GET /amazon/products/{product_id}]
+Show product information based on its ID.
+  - product_id (integer, required): The ID of the product.
+  response: {"product_id": 1, "seller_id": 1, "product_type": "string", "name": "string", "description": "string", "price": 0.0, "delivery_days": 1.0, "inventory_quantity": 0.0, "weight": 0.0, "length": 0.0, "width": 0.0, "height": 0.0, "color": "string", "relative_size": "extra-small", "rating": 0.0, "num_product_reviews": 1, "num_product_questions": 1, "variations": [{"product_id": 1, "relative_size": "extra-small", "color": "string"}]}

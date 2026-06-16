@@ -1,0 +1,4 @@
+spotify.show_payment_cards  [GET /spotify/payment_cards]
+Get a list of users payment cards.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: [{"payment_card_id": 1, "card_name": "string", "owner_name": "string", "card_number": 1000000000000000.0, "expiry_year": 1, "expiry_month": 1.0, "cvv_number": 100.0}]

@@ -1,0 +1,11 @@
+todoist.update_sub_task  [PATCH /todoist/sub_tasks/{sub_task_id}]
+Update sub_task information.
+  - sub_task_id (integer, required): The ID of the sub_task.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - title (string, optional): The updated title of the sub_task.
+  - description (string, optional): The updated description of the sub_task.
+  - due_date (string, optional): The updated due date of the sub_task in YYYY-MM-DD format.
+  - priority (string, optional): The updated priority of the sub_task.
+  - is_completed (boolean, optional): The updated completion status of the sub_task. True if completed, False otherwise.
+  - order_index (integer, optional): The updated index at which this sub_task should be inserted in the current list of sub_tasks.
+  response: {"message": "string"}

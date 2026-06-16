@@ -1,0 +1,4 @@
+amazon.logout  [POST /amazon/auth/logout]
+Logout from your account.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string"}

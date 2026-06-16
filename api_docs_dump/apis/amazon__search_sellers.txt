@@ -1,0 +1,6 @@
+amazon.search_sellers  [GET /amazon/sellers]
+Search for sellers with a query.
+  - query (string, optional): The search query string.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"seller_id": 1, "name": "string"}]

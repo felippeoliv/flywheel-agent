@@ -1,0 +1,5 @@
+splitwise.delete_group  [DELETE /splitwise/groups/{group_id}]
+Delete a group you are a member of. Any member can undelete it later.
+  - group_id (integer, required): The ID of the group to delete.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

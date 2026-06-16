@@ -1,0 +1,4 @@
+phone.show_contact_relationships  [GET /phone/contact_relationships]
+Get a list of all relationships available in your contact book.
+  - access_token (string, required): Access token obtained from phone app login.
+  response: ["string"]

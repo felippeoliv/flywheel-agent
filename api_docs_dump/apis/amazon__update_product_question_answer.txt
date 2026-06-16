@@ -1,0 +1,6 @@
+amazon.update_product_question_answer  [PATCH /amazon/question_answers/{question_answer_id}]
+Update answer to a product question.
+  - question_answer_id (integer, required): ID of the question answer to update.
+  - access_token (string, required): Access token obtained from amazon app login.
+  - answer (string, optional): The updated answer for the question.
+  response: {"message": "string"}

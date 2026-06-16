@@ -1,0 +1,4 @@
+file_system.logout  [POST /file_system/auth/logout]
+Logout from your account.
+  - access_token (string, required): Access token obtained from file_system app login.
+  response: {"message": "string"}

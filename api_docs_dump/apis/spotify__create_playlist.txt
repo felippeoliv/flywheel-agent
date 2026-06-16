@@ -1,0 +1,6 @@
+spotify.create_playlist  [POST /spotify/playlists]
+Create a new playlist.
+  - title (string, required): The title of the playlist.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - is_public (boolean, optional): Whether the playlist is public or not.
+  response: {"message": "string", "playlist_id": 1}

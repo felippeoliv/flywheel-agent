@@ -1,0 +1,5 @@
+splitwise.show_expense  [GET /splitwise/expenses/{expense_id}]
+Show detailed expense information based on its ID.
+  - expense_id (integer, required): The ID of the expense.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"expense_id": 1, "group_id": 1, "description": "string", "deleted": true, "receipt_file_name": "string", "created_at": "2019-01-01T00:00:00", "shares": [{"debtor": {"name": "string", "email": "user@example.com"}, "debt_amount": 0.0}], "creator": {"name": "string", "email": "user@example.com"}, "payer": {"name": "string", "email": "user@example.com"}, "paid_amount": 0.0}

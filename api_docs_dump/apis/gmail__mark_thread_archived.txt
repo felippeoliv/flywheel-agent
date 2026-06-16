@@ -1,0 +1,5 @@
+gmail.mark_thread_archived  [POST /gmail/email_threads/{email_thread_id}/archived]
+Mark an email thread as archived.
+  - email_thread_id (integer, required): The ID of the email thread to archive.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"message": "string"}

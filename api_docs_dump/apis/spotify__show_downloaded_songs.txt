@@ -1,0 +1,10 @@
+spotify.show_downloaded_songs  [GET /spotify/downloaded_songs]
+Get a list of downloaded songs.
+  - access_token (string, required): Access token obtained from spotify app login.
+  - query (string, optional): The search query string.
+  - min_downloaded_at (string, optional): Filter songs by minimum downloaded_at date in YYYY-MM-DD format.
+  - max_downloaded_at (string, optional): Filter songs by maximum downloaded_at date in YYYY-MM-DD format.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the downloaded songs by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at and downloaded_at. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page. If both query and sort_by are not given, null, or empty, sort_by will default to -downloaded_at.
+  response: [{"song_id": 1, "title": "string", "album_id": 1, "album_title": "string", "duration": 1, "artists": [{"id": 1, "name": "string"}], "downloaded_at": "2019-01-01T00:00:00"}]

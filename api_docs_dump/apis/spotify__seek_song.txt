@@ -1,0 +1,5 @@
+spotify.seek_song  [POST /spotify/music_player/seek]
+Seek the current song to the given number of seconds.
+  - seek_seconds (integer, required): The number of seconds to seek.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

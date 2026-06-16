@@ -1,0 +1,10 @@
+spotify.search_artists  [GET /spotify/artists]
+Search for artists with a query.
+  - query (string, optional): The search query string.
+  - genre (string, optional): The genre to filter the artists by.
+  - min_follower_count (integer, optional): The minimum number of followers for search results.
+  - max_follower_count (integer, optional): The maximum number of followers for search results.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the artists by prefixed with +/- to reflect ascending/descending. Valid attributes: follower_count. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page.
+  response: [{"artist_id": 1, "name": "string", "genre": "string", "follower_count": 1, "created_at": "2019-01-01T00:00:00"}]

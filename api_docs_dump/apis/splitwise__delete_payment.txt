@@ -1,0 +1,5 @@
+splitwise.delete_payment  [DELETE /splitwise/payments/{payment_id}]
+Mark the payment you are involved in as deleted. Anyone involved in the payment or a member of its group can undelete it later.
+  - payment_id (integer, required): The ID of the payment to delete.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

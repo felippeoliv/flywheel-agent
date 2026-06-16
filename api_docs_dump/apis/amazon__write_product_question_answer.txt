@@ -1,0 +1,6 @@
+amazon.write_product_question_answer  [POST /amazon/questions/{question_id}/answers]
+Write a answer to a product question.
+  - question_id (integer, required): ID of the product question this is an answer to.
+  - answer (string, required): Answer to the question.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string", "question_answer_id": 1}

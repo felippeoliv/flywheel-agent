@@ -1,0 +1,8 @@
+file_system.decompress_file  [POST /file_system/file/decompress]
+Decompress a compressed file.
+  - compressed_file_path (string, required): Path of the compressed file. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'. Must have an extension: zip or tar.
+  - access_token (string, required): Access token obtained from file_system app login.
+  - decompressed_directory_path (string, optional): Path of the directory to save decompressed files. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'. If not passed, it'll be saved in the same directory as the compressed file.
+  - retain_dates (boolean, optional): Whether the decompressed files should retain the created and updated dates of the files in the compressed file.
+  - delete_compressed_file (boolean, optional): Whether to delete the compressed file after decompression.
+  response: {"message": "string", "decompressed_directory_path": "string"}

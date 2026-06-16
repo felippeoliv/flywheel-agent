@@ -1,0 +1,4 @@
+splitwise.show_groups_balance  [GET /splitwise/balance/groups]
+Show the aggregate amounts you owe to others or others owe you for each group you are member of. The non-grouped expenses/payments will be shown as a group with group_id of None.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"you_owe_others": 0.0, "others_owe_you": 0.0, "breakdown": [{"group_id": 1, "group_name": "string", "you_owe_others": 0.0, "others_owe_you": 0.0}]}

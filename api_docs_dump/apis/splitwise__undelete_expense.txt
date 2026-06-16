@@ -1,0 +1,5 @@
+splitwise.undelete_expense  [PATCH /splitwise/expenses/{expense_id}/undelete]
+Restore a previously deleted expense you are involved in.
+  - expense_id (integer, required): The ID of the expense to undelete.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

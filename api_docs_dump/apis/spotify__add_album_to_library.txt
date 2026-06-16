@@ -1,0 +1,5 @@
+spotify.add_album_to_library  [POST /spotify/library/albums/{album_id}]
+Add an album to the user's album library.
+  - album_id (integer, required): The album id to add.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

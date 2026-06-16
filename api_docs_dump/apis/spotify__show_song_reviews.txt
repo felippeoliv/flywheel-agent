@@ -1,0 +1,11 @@
+spotify.show_song_reviews  [GET /spotify/songs/{song_id}/reviews]
+Get a list of reviews for a song.
+  - song_id (integer, required): The song id to retrieve reviews for.
+  - query (string, optional): The search query string.
+  - user_email (string, optional): Email of the user to filter reviews by.
+  - min_rating (integer, optional): The minimum rating for a review.
+  - max_rating (integer, optional): The maximum rating for a review.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the song reviews by prefixed with +/- to reflect ascending/descending. Valid attributes: rating and created_at. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page.
+  response: [{"song_review_id": 1, "song_id": 1, "rating": 1.0, "title": "string", "text": "string", "created_at": "2019-01-01T00:00:00", "user": {"name": "string", "email": "user@example.com"}}]

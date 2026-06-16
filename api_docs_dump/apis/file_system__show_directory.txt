@@ -1,0 +1,8 @@
+file_system.show_directory  [GET /file_system/directory]
+Show a list of files and/or sub-directories, optionally recursively, in a directory.
+  - access_token (string, required): Access token obtained from file_system app login.
+  - directory_path (string, optional): Path of the directory. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - substring (string, optional): If passed, only files and sub-directories containing the given substring (ignoring case) will be shown.
+  - entry_type (string, optional): Whether to show all files and sub-directories, only files, or only sub-directories.
+  - recursive (boolean, optional): Whether to show files recursively.
+  response: ["string"]

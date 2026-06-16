@@ -1,0 +1,8 @@
+file_system.copy_file  [POST /file_system/file/copy]
+Copy a file to another location.
+  - source_file_path (string, required): Path of the source file. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - destination_file_path (string, required): Path of the destination file. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - access_token (string, required): Access token obtained from file_system app login.
+  - overwrite (boolean, optional): Whether to overwrite the file if it already exists.
+  - retain_dates (boolean, optional): Whether the copied file should retain the original file's created and updated dates.
+  response: {"message": "string", "destination_file_path": "string"}

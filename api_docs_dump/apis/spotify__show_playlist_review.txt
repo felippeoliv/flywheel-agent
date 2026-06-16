@@ -1,0 +1,5 @@
+spotify.show_playlist_review  [GET /spotify/playlist_reviews/{review_id}]
+Show a playlist review.
+  - review_id (integer, required): The song review id to retrieve.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"playlist_review_id": 1, "playlist_id": 1, "rating": 1.0, "title": "string", "text": "string", "created_at": "2019-01-01T00:00:00", "user": {"name": "string", "email": "user@example.com"}}

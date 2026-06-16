@@ -1,0 +1,8 @@
+amazon.download_prime_subscription_receipt  [GET /amazon/prime/subscriptions/{prime_subscription_id}/receipt]
+Download the receipt for a prime subscription.
+  - prime_subscription_id (integer, required): ID of the prime subscription to download the receipt for.
+  - access_token (string, required): Access token obtained from amazon app login.
+  - download_to_file_path (string, optional): The file path to download the receipt file to in file system app. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'. If not passed, it will be saved in your ~/downloads directory.
+  - overwrite (boolean, optional): Whether to overwrite the file if it already exists.
+  - file_system_access_token (string, optional): Access token obtained from file_system app login.
+  response: {"message": "string", "file_path": "string"}

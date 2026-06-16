@@ -1,0 +1,8 @@
+file_system.move_directory  [POST /file_system/directory/move]
+Move a directory to another location.
+  - source_directory_path (string, required): Path of the source directory. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - destination_directory_path (string, required): Path of the destination directory. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'.
+  - access_token (string, required): Access token obtained from file_system app login.
+  - overwrite (boolean, optional): Whether to overwrite the directory if it already exists.
+  - retain_dates (boolean, optional): Whether the files in the moved directory should retain the created and updated dates of the files in the original directory.
+  response: {"message": "string", "destination_directory_path": "string"}

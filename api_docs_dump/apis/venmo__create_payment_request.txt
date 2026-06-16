@@ -1,0 +1,8 @@
+venmo.create_payment_request  [POST /venmo/payment_requests]
+Send a payment request.
+  - user_email (string, required): Email address of the receiver user.
+  - amount (number, required): Amount of the payment request.
+  - access_token (string, required): Access token obtained from venmo app login.
+  - description (string, optional): Description of or note about the payment request.
+  - private (boolean, optional): The privacy of the transaction on approval of the payment request.
+  response: {"message": "string", "payment_request_id": 1}

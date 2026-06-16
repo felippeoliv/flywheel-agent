@@ -1,0 +1,5 @@
+splitwise.show_notifications_count  [GET /splitwise/notifications/count]
+Get the count of your notifications.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - read (boolean, optional): Count notifications by read status. Will count all if not passed.
+  response: {"notifications_count": 0.0}

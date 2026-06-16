@@ -1,0 +1,4 @@
+todoist.logout  [POST /todoist/auth/logout]
+Logout from your account.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

@@ -1,0 +1,6 @@
+venmo.add_to_venmo_balance  [POST /venmo/balance]
+Add money to your Venmo balance.
+  - amount (number, required): Amount to add to Venmo balance.
+  - payment_card_id (integer, required): ID of the payment card to use for adding balance.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string", "bank_transfer_id": 1}

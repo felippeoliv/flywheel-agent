@@ -1,0 +1,5 @@
+spotify.show_song_privates  [GET /spotify/songs/{song_id}/privates]
+Show information about the song that is private to the user.
+  - song_id (integer, required): The song id to retrieve.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"liked": true, "reviewed": true, "in_song_library": true, "downloaded": true}

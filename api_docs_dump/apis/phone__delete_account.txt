@@ -1,0 +1,4 @@
+phone.delete_account  [DELETE /phone/account]
+Delete your account.
+  - access_token (string, required): Access token obtained from phone app login.
+  response: {"message": "string"}

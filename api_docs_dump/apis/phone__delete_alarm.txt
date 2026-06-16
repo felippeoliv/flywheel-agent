@@ -1,0 +1,5 @@
+phone.delete_alarm  [DELETE /phone/alarms/{alarm_id}]
+Delete an alarm.
+  - alarm_id (integer, required): ID of the alarm to delete.
+  - access_token (string, required): Access token obtained from phone app login.
+  response: {"message": "string"}

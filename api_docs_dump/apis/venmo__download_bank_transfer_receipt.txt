@@ -1,0 +1,8 @@
+venmo.download_bank_transfer_receipt  [GET /venmo/bank_transfers/{bank_transfer_id}/receipt]
+Download the receipt of money transfer from Venmo to payment card or vice versa.
+  - bank_transfer_id (integer, required): ID of the bank transfer to download the receipt for.
+  - access_token (string, required): Access token obtained from venmo app login.
+  - download_to_file_path (string, optional): The file path to download the receipt file to in file system app. Path can be absolute, starting with '/', or relative to the user's home directory, starting with '~/'. If not passed, it will be saved in your ~/downloads directory.
+  - overwrite (boolean, optional): Whether to overwrite the file if it already exists.
+  - file_system_access_token (string, optional): Access token obtained from file_system app login.
+  response: {"message": "string", "file_path": "string"}

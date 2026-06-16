@@ -1,0 +1,4 @@
+spotify.pause_music  [POST /spotify/music_player/pause]
+Pause the currently playing song.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

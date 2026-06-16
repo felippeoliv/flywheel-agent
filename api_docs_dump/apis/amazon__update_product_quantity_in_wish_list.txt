@@ -1,0 +1,6 @@
+amazon.update_product_quantity_in_wish_list  [PATCH /amazon/wish_lists/{product_id}]
+Update product quantity in the user wish_list.
+  - product_id (integer, required): ID of the product being updated in the wish list.
+  - quantity (integer, required): The new quantity of the product to be updated in the wish list.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string"}

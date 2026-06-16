@@ -1,0 +1,5 @@
+splitwise.exit_group  [POST /splitwise/groups/{group_id}/members/exit]
+Exit from a group you are a part of.
+  - group_id (integer, required): The ID of the group to exit.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"message": "string"}

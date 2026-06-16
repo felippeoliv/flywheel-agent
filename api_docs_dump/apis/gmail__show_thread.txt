@@ -1,0 +1,5 @@
+gmail.show_thread  [GET /gmail/email_threads/{email_thread_id}]
+Show detailed information about a given email thread, including emails and drafts within it.
+  - email_thread_id (integer, required): The ID of the email thread to show.
+  - access_token (string, required): Access token obtained from gmail app login.
+  response: {"email_thread_id": 1, "incoming": true, "outgoing": true, "read": true, "label": "string", "starred": true, "archived": true, "spam": true, "created_at": "2019-01-01T00:00:00", "updated_at": "2019-01-01T00:00:00", "emails": [{"email_id": 1, "subject": "string", "sender": {"name": "string", "email": "user@example.com"}, "recipients": [{"name": "string", "email": "user@example.com"}], "body": "string", "attachments": [{"id": 1, "file_name": "string"}], "created_at": "2019-01-01T00:00:00"}], "drafts": [{"draft_id": 1, "response_to_email_id": 1, "subject": "string", "recipients": [{"name": "strin

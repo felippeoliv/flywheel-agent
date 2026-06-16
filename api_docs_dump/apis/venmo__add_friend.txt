@@ -1,0 +1,5 @@
+venmo.add_friend  [POST /venmo/friends/{user_email}]
+Add a friend to your friend list.
+  - user_email (string, required): Email address of the friend to add.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

@@ -1,0 +1,10 @@
+splitwise.update_expense  [PATCH /splitwise/expenses/{expense_id}]
+Update expense information.
+  - expense_id (integer, required): The ID of the expense.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - description (string, optional): The updated note or description of the expense.
+  - paid_amount (number, optional): The updated total paid amount of the expense.
+  - payer_email (string, optional): Email of updated user who paid for the expense.
+  - debtor_emails (list[string], optional): Emails of updated users who owe a share of the expense.
+  - debt_amounts (list[number], optional): The updated amounts owed by each debtor. If debtor_ids is passed and debt_amounts is not passed, each debtor will owe an equal share. If debtor_ids is passed and debt_amounts is passed, the list must be of the same length as debtor_ids.If debt_amount is passed, debtor_ids must be passed.
+  response: {"message": "string"}

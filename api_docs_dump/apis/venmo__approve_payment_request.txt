@@ -1,0 +1,6 @@
+venmo.approve_payment_request  [POST /venmo/payment_requests/{payment_request_id}/approve]
+Approve a payment request.
+  - payment_request_id (integer, required): ID of the payment request to approve.
+  - access_token (string, required): Access token obtained from venmo app login.
+  - payment_card_id (integer, optional): ID of the payment card to use for approving the payment request. If not passed, Venmo balance will be used.
+  response: {"message": "string"}

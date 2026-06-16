@@ -1,0 +1,5 @@
+splitwise.show_person_balance  [POST /splitwise/balance/person/]
+Show the amounts you and a given person owe to each other, broken down by group. The non-grouped expenses/payments will be shown as a group with ID None.
+  - email (string, required): The email of the person to show your balance with.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"direction": "you_owe_them", "total": 0.0, "breakdown": [{"group_id": 1, "group_name": "string", "direction": "you_owe_them", "amount": 0.0}]}

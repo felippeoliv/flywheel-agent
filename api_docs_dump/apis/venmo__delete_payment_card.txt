@@ -1,0 +1,5 @@
+venmo.delete_payment_card  [DELETE /venmo/payment_cards/{payment_card_id}]
+Delete payment card information.
+  - payment_card_id (integer, required): ID of the payment card to be deleted.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

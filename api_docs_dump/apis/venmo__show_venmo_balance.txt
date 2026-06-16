@@ -1,0 +1,4 @@
+venmo.show_venmo_balance  [GET /venmo/balance]
+Show your Venmo balance.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"venmo_balance": 0.0}

@@ -1,0 +1,10 @@
+amazon.add_address  [POST /amazon/addresses]
+Add a new address.
+  - name (string, required): Name of the address, for example 'Home' or 'Work'.
+  - street_address (string, required): Street address line.
+  - city (string, required): Name of the city.
+  - state (string, required): Name of the state.
+  - country (string, required): Name of the country.
+  - zip_code (integer, required): 5-digit zip code of the address.
+  - access_token (string, required): Access token obtained from amazon app login.
+  response: {"message": "string", "address_id": 1}

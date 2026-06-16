@@ -1,0 +1,18 @@
+gmail.show_inbox_threads  [GET /gmail/email_threads/category/inbox]
+Show or search email threads you have received. This will not show detailed information about emails within the thread.
+  - access_token (string, required): Access token obtained from gmail app login.
+  - query (string, optional): The search query string.
+  - label (string, optional): The label to filter the emails by.
+  - starred (boolean, optional): Filter emails by starred status.
+  - archived (boolean, optional): Filter emails by archived status.
+  - spam (boolean, optional): Filter emails by spam status.
+  - read (boolean, optional): Filter emails by read status.
+  - attachment (boolean, optional): Filter emails by whether they have an attachment or not.
+  - from_email (string, optional): Filter emails by sender email address.
+  - to_email (string, optional): Filter emails by recipient email address.
+  - min_created_at (string, optional): Filter emails by minimum created_at date in YYYY-MM-DD format.
+  - max_created_at (string, optional): Filter emails by maximum created_at date in YYYY-MM-DD format.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the email threads by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at and updated_at. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page. If both query and sort_by are not given, null, or empty, sort_by will default to -updated_at.
+  response: [{"email_thread_id": 1, "email_ids": [1], "draft_ids": [1], "incoming": true, "outgoing": true, "read": true, "label": "string", "starred": true, "archived": true, "spam": true, "created_at": "2019-01-01T00:00:00", "updated_at": "2019-01-01T00:00:00", "subject": "string", "participants": [{"name": "string", "email": "user@example.com"}]}]

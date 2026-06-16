@@ -1,0 +1,3 @@
+api_docs.show_app_descriptions  [GET /api_docs/app_descriptions]
+Show descriptions for all apps available.
+  response: [{"name": "string", "description": "string"}]

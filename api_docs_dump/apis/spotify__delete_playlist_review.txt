@@ -1,0 +1,5 @@
+spotify.delete_playlist_review  [DELETE /spotify/playlist_reviews/{review_id}]
+Delete a playlist review.
+  - review_id (integer, required): ID of the playlist review.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

@@ -1,0 +1,7 @@
+todoist.show_task_comments  [GET /todoist/tasks/{task_id}/comments]
+Get a list of task comments.
+  - task_id (integer, required): The ID of the task.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"task_id": 1, "content": "string", "created_at": "2019-01-01T00:00:00", "task_comment_id": 1, "user": {"name": "string", "email": "user@example.com"}, "attachment_file_names": ["string"]}]

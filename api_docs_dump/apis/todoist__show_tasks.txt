@@ -1,0 +1,16 @@
+todoist.show_tasks  [GET /todoist/projects/{project_id}/tasks]
+Get a list of tasks within a project.
+  - project_id (integer, required): The ID of the project. You can use 0 for your Inbox project.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - section_id (integer, optional): The ID of the section to filter tasks by. Set it to 0 for tasks without a section.
+  - assignee_email (string, optional): Email address of the assignee to filter tasks by.
+  - assigner_email (string, optional): Email address of the assigner to filter tasks by.
+  - priority (string, optional): The priority to filter tasks by.
+  - is_completed (boolean, optional): Completion status to filter by.
+  - due_today (boolean, optional): If true, only tasks due today will be returned. If false, all tasks will be returned.
+  - label_id (integer, optional): The ID of the label to filter tasks by.
+  - overdue (boolean, optional): If true, only tasks that are overdue will be returned. If false, all tasks will be returned.
+  - min_due_date (string, optional): Only tasks with a due date greater than or equal to this date will be returned. Date should be in YYYY-MM-DD format.
+  - max_due_date (string, optional): Only tasks with a due date less than or equal to this date will be returned. Date should be in YYYY-MM-DD format.
+  - sort_by (string, optional): The attribute to sort the tasks by prefixed with +/- to reflect ascending/descending. Valid attributes: order_index, due_date and priority.
+  response: {"project_id": 1, "no_section_tasks": [{"order_index": 1, "task_id": 1, "title": "string", "description": "string", "num_sub_tasks": 1, "is_completed": true, "due_date": "2019-01-01T00:00:00", "priority": "high", "duration": 0.0, "duration_unit": "minutes", "assignee_id": 1, "labels": [{"id": 1, "color": "string", "name": "string"}]}], "sections": [{"section_id": 1, "tasks": [{"order_index": 1, "task_id": 1, "title": "string", "description": "string", "num_sub_tasks": 1, "is_completed": true, "due_date": "2019-01-01T00:00:00", "priority": "high", "duration": 0.0, "duration_unit": "minutes", "a

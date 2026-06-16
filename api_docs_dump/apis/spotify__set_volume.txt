@@ -1,0 +1,5 @@
+spotify.set_volume  [POST /spotify/music_player/volume]
+Set the volume level of the music player.
+  - volume (integer, required): Volume level to set.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

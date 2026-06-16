@@ -1,0 +1,5 @@
+venmo.remind_payment_request  [POST /venmo/payment_requests/{payment_request_id}/remind]
+Send a reminder to a user via notification about this payment request.
+  - payment_request_id (integer, required): ID of the payment request to remind about.
+  - access_token (string, required): Access token obtained from venmo app login.
+  response: {"message": "string"}

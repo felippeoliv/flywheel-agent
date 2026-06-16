@@ -1,0 +1,7 @@
+splitwise.search_users  [GET /splitwise/users]
+Search Splitwise users by name or email address.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  - query (string, optional): Search query string.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  response: [{"name": "string", "email": "user@example.com", "direction": "you_owe_them", "amount": 0.0}]

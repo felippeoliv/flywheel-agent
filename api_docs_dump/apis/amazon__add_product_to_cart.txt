@@ -1,0 +1,7 @@
+amazon.add_product_to_cart  [POST /amazon/cart/{product_id}]
+Add product by id and quantities to your cart.
+  - product_id (integer, required): ID of the product to be added to the cart.
+  - access_token (string, required): Access token obtained from amazon app login.
+  - quantity (integer, optional): The quantity of the product to be added to the cart.
+  - clear_cart_first (boolean, optional): If true, the cart will be cleared before adding the product to the cart.
+  response: {"message": "string"}

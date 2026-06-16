@@ -1,0 +1,11 @@
+todoist.show_projects  [GET /todoist/projects]
+Show or search a list of your projects.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - query (string, optional): The search query for projects.
+  - color (string, optional): The color of the project to filter by.
+  - is_favorite (boolean, optional): Project's favorite status to filter by.
+  - is_archived (boolean, optional): Project's archival status to filter by.
+  - page_index (integer, optional): The index of the page to return.
+  - page_limit (integer, optional): The maximum number of results to return per page.
+  - sort_by (string, optional): The attribute to sort the projects by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page. If both query and sort_by are not given, null, or empty, sort_by will default to -created_at.
+  response: [{"name": "string", "color": "charcoal", "is_inbox": true, "description": "string", "is_favorite": true, "is_archived": true, "created_at": "2019-01-01T00:00:00", "project_id": 1, "creator": {"name": "string", "email": "user@example.com"}, "num_tasks": 1, "sections": [{"id": 1, "name": "string", "num_tasks": 1}], "collaborators": [{"name": "string", "email": "user@example.com"}], "pending_invites": [{"invite_code": "string", "invitee": {"name": "string", "email": "user@example.com"}, "inviter": {"name": "string", "email": "user@example.com"}}], "is_shared": true}]

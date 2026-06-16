@@ -1,0 +1,4 @@
+splitwise.show_people_balance  [POST /splitwise/balance/people]
+Show the aggregate amounts you owe to each person and they owe to you.
+  - access_token (string, required): Access token obtained from splitwise app login.
+  response: {"you_owe_others": 0.0, "others_owe_you": 0.0, "breakdown": [{"email": "user@example.com", "name": "string", "direction": "you_owe_them", "amount": 0.0}]}

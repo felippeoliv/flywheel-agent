@@ -1,0 +1,4 @@
+todoist.delete_notifications  [DELETE /todoist/notifications]
+Delete all of your notifications.
+  - access_token (string, required): Access token obtained from todoist app login.
+  response: {"message": "string"}

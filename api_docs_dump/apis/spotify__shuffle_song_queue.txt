@@ -1,0 +1,4 @@
+spotify.shuffle_song_queue  [POST /spotify/music_player/shuffle]
+Shuffle songs in the music player queue.
+  - access_token (string, required): Access token obtained from spotify app login.
+  response: {"message": "string"}

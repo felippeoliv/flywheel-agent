@@ -1,0 +1,10 @@
+todoist.update_project  [PATCH /todoist/projects/{project_id}]
+Update project information.
+  - project_id (integer, required): The ID of the project. You can use 0 for your Inbox project.
+  - access_token (string, required): Access token obtained from todoist app login.
+  - name (string, optional): The updated name of the project.
+  - color (string, optional): The updated color of the project.
+  - description (string, optional): The updated description of the project.
+  - is_favorite (boolean, optional): Whether the project is marked as favorite.
+  - is_archived (boolean, optional): Whether the project is marked as archived.
+  response: {"message": "string"}

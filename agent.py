@@ -19,6 +19,7 @@ The model is fixed for everyone, so every point comes from the engineering aroun
 import json
 import os
 import re
+import time
 
 import obs
 from retriever import get_retriever
@@ -122,7 +123,16 @@ APP_RECIPES = {
         "today' is relative to the SANDBOX clock (datetime.now()). Scan messages from BOTH people "
         "(the answer is often a bare reply like 'It was $54.'), and do NOT require a keyword. Pull a "
         "number with re.search(r'\\$(\\d+)', msg). If you can't find it, WIDEN the window and re-read "
-        "-- never give up and submit nothing."
+        "-- never give up and submit nothing.\n"
+        "PHONE contacts by relationship: 'my siblings / roommates / parents / friends / coworkers' = "
+        "paginate phone.search_contacts(relationship=R) for EACH named relationship (use the PLURAL "
+        "string: 'siblings','roommates','parents','friends','coworkers') and UNION the contacts by "
+        "email. To test whether a contact HAS a venmo account, call venmo.show_profile(email=..) "
+        "INSIDE try/except: it RETURNS their profile if the account exists, and RAISES a 422 "
+        "'Account for this email does not exist.' when it does NOT. So 'no venmo account' = the call "
+        "RAISES with 'does not exist' (do not look for that message on a returned value -- it comes "
+        "as an exception). A 'send to ALL of them' task is ONE loop over the full union -- paginate, "
+        "don't stop after the first couple, and text every qualifying contact's phone_number."
     ),
     "venmo": (
         "VENMO send money (do it in ONE block): (1) Resolve the recipient: given a phone number, "
@@ -345,8 +355,14 @@ def _run_until_done(ctx, messages, kind):
       - model printed DONE (action)    -> (False, None)    we submit empty
       - model called complete_task     -> (True, None)     already done, don't touch it
       - ran out of turns               -> (False, None)    force-submit handles it"""
-    turns = min(ctx.max_steps, 16)
+    turns = min(ctx.max_steps or 16, 16)
+    # wall-clock safety: the graded sandbox kills a task at ~300s. Force-submit a best-effort answer
+    # before that instead of looping into a timeout (which wastes the whole task AND burns budget).
+    deadline = time.monotonic() + float(os.environ.get("FLYWHEEL_DEADLINE_S", "240"))
     for turn in range(turns):
+        if time.monotonic() > deadline:  # out of time: stop, let _submit/_force_submit handle it
+            ctx.reflect("approaching the task time limit; submitting best-effort now")
+            return False, None
         reply = _content(ctx.model(messages))
         code = _code(reply)
         if not code:

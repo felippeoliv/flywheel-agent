@@ -126,6 +126,17 @@ class BM25Retriever:
             rows.append(f"{head} : {desc}")
         return rows
 
+    def get_doc(self, api_id):
+        """Full doc text for an 'app__api' id (or 'app.api'), or None if unknown."""
+        api_id = api_id.replace(".", "__", 1)
+        try:
+            return self.texts[self.ids.index(api_id)]
+        except ValueError:
+            return None
+
+    def has(self, api_id):
+        return api_id.replace(".", "__", 1) in self.ids
+
     def context_block(self, query, k=12, app_hint=None, char_budget=4000):
         """Top-k chunks concatenated as a prompt-ready block, trimmed to char_budget."""
         hits = self.search(query, k=k, app_hint=app_hint)

@@ -16,6 +16,7 @@ The model is fixed for everyone, so every point comes from the engineering aroun
             graded, so the lessons must change a later task's behavior, not just sit there.
   6. Always submit -- an unsubmitted task scores 0, so we force a final complete_task no matter what.
 """
+import json
 import os
 import re
 
@@ -63,7 +64,13 @@ SYSTEM = (
     "   - ACTION (a verb that mutates: follow/like/comment/add/send/...): after the writes land and "
     "you re-read to confirm, print('DONE'). No answer text for actions.\n"
     "The harness reads that printed signal and submits for you, so getting the signal right is "
-    "everything."
+    "everything.\n"
+    "6. CHANGE ONLY WHAT THE TASK ASKS. The oracle compares the EXACT set of records you mutate "
+    "against the goal; ONE extra write scores 0 even when the requested action also succeeded. Do "
+    "NOT add side effects the task didn't request: no funding/top-ups, no confirmation texts or "
+    "emails, no downloading receipts (that writes a file), no marking notifications/emails read, no "
+    "creating notes. When a write needs funds, pay THROUGH the write API itself (e.g. "
+    "payment_card_id), never a separate top-up. Verify with READ-ONLY calls."
 )
 
 # curated, verified method gotchas, injected every task -- raises the floor for both memory arms
@@ -81,8 +88,65 @@ HOUSE_RULES = (
     "verify and print DONE in that SAME block. If a later turn shows your writes already landed, do "
     "NOT run them again (that creates duplicates) -- just print DONE.\n"
     "- Amounts/names/dates the task refers to indirectly (e.g. 'as per my text conversation') must "
-    "be READ from the relevant records, never invented."
+    "be READ from the relevant records, never invented.\n"
+    "- Relative dates ('this year', 'last month', 'today', 'now') are relative to the SANDBOX clock, "
+    "NOT the real world. Read it inside run_code with `from datetime import datetime; now = "
+    "datetime.now()` and derive the boundary from that (e.g. start of this year = "
+    "now.replace(month=1, day=1)). NEVER hardcode a year.\n"
+    "- COLLATERAL = 0: the grader checks the EXACT set of models you changed. Never perform a write "
+    "the task didn't ask for (funding a balance, sending a confirmation email/text, downloading a "
+    "receipt, marking notifications read, adding a friend). Each extra mutation fails the "
+    "exact-state oracle even when the main action worked.\n"
+    "- NEVER no-op an ACTION: finishing an action task with ZERO writes scores 0 -- worse than an "
+    "imperfect attempt. A task may need SEVERAL writes (e.g. send a payment AND a text); do ALL of "
+    "them. If you're blocked finding a value the task references, RE-READ more broadly (every page, "
+    "both senders, a wider date window) -- do not give up and submit nothing.\n"
+    "- Send money on Venmo with apis.venmo.create_transaction(receiver_email=<email you already "
+    "have>, amount=N, private=False for 'public', payment_card_id=<id>). It takes receiver_email, "
+    "NOT a user_id, and 'public' means private=False. If the balance is short, pass payment_card_id "
+    "and try show_payment_cards() until one is not expired and has funds -- do NOT "
+    "add_to_venmo_balance (that records a BankTransfer = collateral).\n"
+    "- Reference a person in a write by the field the API documents (usually an email from "
+    "search_users/contacts you already fetched). Do NOT burn turns hunting a numeric user_id the "
+    "write API doesn't even take."
 )
+
+# app-specific recipes, injected ONLY when the app is detected -- encode the gold semantics for the
+# aggregation tasks the weak model gets wrong (unreliably) when left to improvise.
+APP_RECIPES = {
+    "phone": (
+        "PHONE 'as per my text conversation' / 'as we discussed': the value the task needs (an amount, "
+        "a name, a date) is written in the message text -- READ it, never invent it. phone."
+        "search_contacts(query=Name) -> the contact's phone_number AND email; phone."
+        "search_text_messages(phone_number=..) paginated for the whole thread. 'Recently/yesterday/"
+        "today' is relative to the SANDBOX clock (datetime.now()). Scan messages from BOTH people "
+        "(the answer is often a bare reply like 'It was $54.'), and do NOT require a keyword. Pull a "
+        "number with re.search(r'\\$(\\d+)', msg). If you can't find it, WIDEN the window and re-read "
+        "-- never give up and submit nothing."
+    ),
+    "venmo": (
+        "VENMO send money (do it in ONE block): (1) Resolve the recipient: given a phone number, "
+        "phone.show_profile(phone_number=..) -> name; venmo.search_users(query='First Last') -> pick "
+        "the exact first+last match and take their EMAIL (you do NOT need a user_id). (2) Send with "
+        "create_transaction(receiver_email=EMAIL, amount=N, description='...', private=False for "
+        "'public'/'publicly', payment_card_id=CARD). (3) Funds: the Venmo balance is usually 0, so "
+        "pass payment_card_id and loop show_payment_cards() IN ORDER, wrapping each attempt in "
+        "try/except: a card can raise 422 'expired' or 'does not have $X' -- catch it and try the "
+        "NEXT card until ONE send succeeds (break immediately; never send twice). NEVER call "
+        "add_to_venmo_balance (it records a BankTransfer = collateral). (4) Verify by reading the "
+        "transaction back, then print DONE."
+    ),
+    "spotify": (
+        "SPOTIFY library aggregation: 'X across my song, album and playlist libraries' = the DEDUPED "
+        "UNION (a set) of song ids from show_song_library + EVERY show_album_library item's song_ids "
+        "+ EVERY show_playlist_library item's song_ids (paginate all three). Read each song's "
+        "genre/play_count/release_date with show_song(song_id). 'Top N most played' = sort by "
+        "play_count DESCENDING, take the first N titles. Match a genre to its EXACT stored casing "
+        "(e.g. 'R&B', 'EDM'). When filtering by a DATE window across libraries, album- and "
+        "playlist-library items carry their OWN release_date/added_at -- gate those at the "
+        "album/playlist level and include ALL their song_ids; only the song library filters per song."
+    ),
+}
 
 SUBMIT_RE = re.compile(r"^\s*SUBMIT:\s*(.*\S)\s*$", re.MULTILINE)
 DONE_RE = re.compile(r"^\s*DONE\s*$", re.MULTILINE)
@@ -144,6 +208,49 @@ def _classify_kind(ctx, instr):
     return _classify_kind_heuristic(instr)
 
 
+def _plan(ctx, instr, apps, retr):
+    """Stage-2 retrieval + classification in ONE model call. BM25 ranks API docs by lexical overlap
+    and misses the core endpoint when the task's words don't match the API name ('Send $100' never
+    surfaces venmo.create_transaction). So we show the model the FULL catalog (name + one-line) of
+    the detected apps and let it pick the endpoints actually needed; we then inject those full docs.
+    Same call also classifies action vs question. Returns (kind, [api_id, ...]); falls back cleanly."""
+    catalog, valid = "", set()
+    for app in (apps or [])[:3]:
+        for row in retr.app_catalog(app):  # "app.api : one-line desc"
+            head = row.split(" : ", 1)[0].strip()
+            cid = head.replace(".", "__", 1)
+            if cid in retr.ids:
+                catalog += row + "\n"
+                valid.add(cid)
+    if not catalog:
+        return _classify_kind(ctx, instr), []
+    try:
+        raw = _content(ctx.model([
+            {"role": "system", "content":
+                "You plan an AppWorld task. Reply with ONLY a JSON object: "
+                '{"kind": "action"|"question", "apis": ["app.api", ...]}. '
+                "kind=action if the task changes the world (send/pay/play/follow/add/mark/...); "
+                "question if it only asks for a value to report. apis = the 3-8 endpoints actually "
+                "needed, chosen ONLY from the candidates: the exact mutate endpoint for an action "
+                "(e.g. the 'send money' one), the right list/detail endpoints for a question. Prefer "
+                "the endpoint whose description matches the intent over one whose name matches a word."},
+            {"role": "user", "content": f"TASK:\n{instr}\n\nCANDIDATE ENDPOINTS:\n{catalog}\nJSON:"},
+        ]))
+        m = re.search(r"\{.*\}", raw, re.DOTALL)
+        obj = json.loads(m.group(0)) if m else {}
+        kw = str(obj.get("kind", "")).strip().lower()
+        kind = "action" if kw.startswith("a") else "question" if kw.startswith("q") \
+            else _classify_kind_heuristic(instr)
+        ids = []
+        for name in (obj.get("apis") or [])[:8]:
+            cid = str(name).strip().replace(".", "__", 1)
+            if cid in valid and cid not in ids:
+                ids.append(cid)
+        return kind, ids
+    except Exception:
+        return _classify_kind(ctx, instr), []
+
+
 def solve(ctx):
     """Entrypoint the harness calls once per task. Wrapped in an observability span so each task is
     one trace tree in Langfuse locally; a complete no-op in the offline graded sandbox."""
@@ -170,8 +277,16 @@ def _solve(ctx):
         lessons.append(f"[any] {line}")
     recall = "\n".join(f"- {l}" for l in lessons[:14])
 
-    # --- RAG: exact docs for the relevant endpoints + full catalog of any named app ---
+    # --- plan: ONE call picks the endpoints this task needs (stage-2 retrieval) + classifies kind ---
+    kind, picked = _plan(ctx, instr, apps, retr)
+
+    # --- RAG: full docs of the picked endpoints FIRST (lexical BM25 misses the core one), then the
+    # BM25 hits as extra signal, then the full catalog of any named app ---
+    priority = "\n\n".join(d for d in (retr.get_doc(i) for i in picked) if d)
+    picked_set = set(picked)
     doc_block, hits = retr.context_block(instr, k=12, char_budget=3800)
+    # drop BM25 chunks already shown as priority docs, to avoid duplication
+    extra = "\n\n".join(h["text"].strip() for h in hits if h["id"] not in picked_set)[:3800]
     catalog = ""
     for app in apps[:2]:
         rows = retr.app_catalog(app)
@@ -183,19 +298,23 @@ def _solve(ctx):
     except Exception:
         pass
 
-    kind = _classify_kind(ctx, instr)
     kind_line = (
         "LIKELY ACTION: mutate the world, then complete_task() with NO answer."
         if kind == "action"
         else "LIKELY QUESTION: compute the exact value, then complete_task(answer=value)."
     )
 
+    # app-specific gold-semantics recipes for the detected apps (only when relevant)
+    recipes = "\n".join(APP_RECIPES[a] for a in (apps or []) if a in APP_RECIPES)
+
     user = (
         f"TASK:\n{instr}\n\n"
         f"TASK KIND (verify yourself): {kind_line}\n\n"
         f"HOUSE RULES (verified, always apply):\n{HOUSE_RULES}\n\n"
+        + (f"APP PLAYBOOK (verified, follow exactly):\n{recipes}\n\n" if recipes else "")
         + (f"LESSONS FROM PRIOR TASKS (reuse, do not relearn):\n{recall}\n\n" if recall else "")
-        + f"RELEVANT API DOCS (exact params + response shapes):\n{doc_block}\n"
+        + (f"ENDPOINTS YOU WILL NEED (exact params + response shapes):\n{priority}\n\n" if priority else "")
+        + f"OTHER POSSIBLY-RELEVANT API DOCS:\n{extra}\n"
         + (f"{catalog}\n" if catalog else "")
         + "\nWrite your FIRST ```python``` block: log in, then start discovering/aggregating. "
         "Keep heavy work in one block. When fully done and verified, print SUBMIT: <answer> "
